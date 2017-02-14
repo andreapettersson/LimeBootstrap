@@ -1,6 +1,6 @@
-/*.html
-!/lbs.html
-/apps/*
-/node_modules/*
-/gulpfile.js
-/lbs.gulp_install.bat
+**/node_modules/*
+frontend/system/dist
+dist
+build
+frontend/full_release.zip
+frontend/upgrade_release.zip
