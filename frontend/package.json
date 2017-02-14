@@ -1,0 +1,29 @@
+{
+    "name": "lime-bootstrap",
+    "version": "0.0.0",
+    "description": "Actionpad framework for Lime CRM",
+    "private": true,
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.lundalogik.com/limepro/lime-webclient.git"
+    },
+    "dependencies": {
+        "gulp": ">=3.9.0",
+        "jshint": ">=2.9.3",
+        "gulp-jshint": ">=2.0.4",
+        "gulp-concat": ">=2.6.1",
+        "gulp-uglify": ">=2.0.1",
+        "gulp-rename": ">=0.0.1",
+        "gulp-minify-css": ">=0.0.1",
+        "gulp-zip": ">=0.0.1"
+    },
+    "devDependencies": {
+    },
+    "engines": {
+        "node": ">=6.2.0"
+    },
+    "scripts": {
+        "test": "gulp test"
+    }
+}
