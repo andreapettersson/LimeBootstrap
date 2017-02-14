@@ -6,3 +6,4 @@ frontend/full_release.zip
 frontend/upgrade_release.zip
 frontend/tools/vendor/nodejs/gulp*
 frontend/tools/vendor/nodejs/npm*
+**/*.egg-info
