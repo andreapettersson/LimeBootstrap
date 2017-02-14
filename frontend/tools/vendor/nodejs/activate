@@ -1,0 +1,58 @@
+deactivatenode() {
+
+    #
+    # Reset old environment variables.
+    #
+    if [ -n "$_OLD_LIME_NODE_ACTIVATE_PATH" ] ; then
+
+        PATH="$_OLD_LIME_NODE_ACTIVATE_PATH"
+        export PATH
+    fi
+    unset _OLD_LIME_NODE_ACTIVATE_PATH
+
+    if [ -n "$_OLD_LIME_NODE_MODULES_PATH" ]; then
+        NODE_PATH="$_OLD_LIME_NODE_MODULES_PATH"
+        export NODE_PATH
+    else
+        unset NODE_PATH
+    fi
+    unset _OLD_LIME_NODE_MODULES_PATH
+
+    # This should detect bash and zsh, which have a hash command that must
+    # be called to get it to forget past commands.  Without forgetting
+    # past commands the $PATH changes we made may not be respected
+    if [ -n "$BASH" -o -n "$ZSH_VERSION" ] ; then
+        hash -r 2>/dev/null
+    fi
+
+    if [ ! "$1" = "nondestructive" ] ; then
+        # Self destruct!
+        unset -f deactivatenode
+    fi
+}
+
+deactivatenode nondestructive
+
+if [[ -n "$BASH" ]]; then
+    _SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+elif [[ -n "$ZSH_VERSION" ]]; then
+    _SCRIPT_PATH="$0:A:h"
+fi
+
+_LOCAL_PATH_TO_NODE="$_SCRIPT_PATH"
+_LOCAL_NODE_MODULES_PATH="$_SCRIPT_PATH/node_modules"
+_OLD_LIME_NODE_ACTIVATE_PATH="$PATH"
+_OLD_LIME_NODE_MODULES_PATH="$NODE_PATH"
+
+PATH="$_LOCAL_PATH_TO_NODE:$PATH"
+export PATH
+
+NODE_PATH="$_LOCAL_NODE_MODULES_PATH"
+export NODE_PATH
+
+# This should detect bash and zsh, which have a hash command that must
+# be called to get it to forget past commands.  Without forgetting
+# past commands the $PATH changes we made may not be respected
+if [ -n "$BASH" -o -n "$ZSH_VERSION" ] ; then
+    hash -r 2>/dev/null
+fi
