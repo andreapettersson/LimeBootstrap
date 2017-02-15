@@ -84,7 +84,7 @@ gulp.task('zip-upgrade',function(){
         'system/**/*'
     ],{base:'.'})
     .pipe(zip('upgrade_release.zip'))
-    .pipe(gulp.dest(''))
+    .pipe(gulp.dest(''));
 });
 
 gulp.task('zip-full',function(){
@@ -98,8 +98,27 @@ gulp.task('zip-full',function(){
         'serve.bat'
     ],{base:'.'})
     .pipe(zip('full_release.zip'))
-    .pipe(gulp.dest(''))
+    .pipe(gulp.dest(''));
 });
 
+
+gulp.task('watch', function() {
+    var GULP_WATCH_POLL_INTERVAL = 400;
+
+    var runSequence = require('run-sequence');
+    var argv = require('yargs')
+        .boolean('lint')
+        .default('lint', true)
+        .argv;
+
+    gulp.watch('system/js/*.js', { interval: GULP_WATCH_POLL_INTERVAL }, function() {
+        runSequence('lint', 'externalscripts','lbsscripts');
+    });
+
+    gulp.watch('system/css/*.{less,css}', { interval: GULP_WATCH_POLL_INTERVAL }, function() {
+        runSequence('css');
+    });
+
+});
 // Default Task
 gulp.task('default',['externalscripts','lbsscripts', 'css', 'zip-upgrade','zip-full']);
