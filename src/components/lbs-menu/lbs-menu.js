@@ -7,15 +7,15 @@ class LBSMenuVM extends LBSBaseComponent {
         super()
         const {
             title = '',
-            expanded = true,
         } = params
-
         this.title = title
-        this.expanded = ko.observable(expanded)
+        this.id = this.getComponentId(this)
+        this.expanded = ko.observable(this.getCookie(`${this.id}_expanded`) === 'true')
     }
 
     toggle() {
         this.expanded(!this.expanded())
+        this.setCookie(`${this.id}_expanded`, this.expanded())
     }
 }
 

@@ -2,7 +2,7 @@
     <li class="menu-header" data-bind="click: toggle">
         <span data-bind="visible: expanded()" class="fa fa-angle-down"></span>
         <span data-bind="visible: !expanded()" class="fa fa-angle-right"></span>
-        <span data-bind="text: title"></span>
+        <span>{{title}}</span>
     </li>
     <li class="divider"></li>
     <!-- ko template: { nodes: $componentTemplateNodes } --><!-- /ko -->
