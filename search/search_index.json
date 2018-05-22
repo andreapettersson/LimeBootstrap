@@ -1,0 +1,574 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Introduction\n\n\nLime Bootstrap is made to make it easier, better and faster working with Actionpads in Lime CRM. The framework relies heavily on Knockout.js and Twitter Bootstrap, styled and adapted to Lime CRM. The framework is mainly used by simple configuration in combination with  many built in convinience functions but it is also very expandable through the use of custom components.\n\n\nThe framework is \"opininated and convention over configuration\", meaning there should be one and only one way to do things. If you find yourself writing lots of code to do something, or god forbid, needing to modify ANY file in the systems folder, you're propably doing it wrong. The framework is there to guide and help you.\n\n\nThese few steps can  act as a guide\n\n\n\n\n\n\nThe systems folder or \nlbs.html\n should never, ever be modified. You can achieve cool and smart functions without ever touching it.\n\n\n\n\n\n\nFollow the design guidelines:\n\n\n\n\nThe design should be flat, free from gradients and focused on content.\n\n\nThe actionpad is very narrow (~250px), use the height and not the width of the actionpad.\n\n\nUse appropriate colors\n\n\nUse appropriate icons\n\n\nDon't \"brand\" the solution with customers logo and colors.\n\n\n\n\n\n\n\n\nKeep ActionPad views free from advanced logic, use components for anything advanced\n\n\n\n\n\n\nContribute to a better framework, any improvements, errors or bugfixes will be committed to this git repository.\n\n\n\n\n\n\nHappy coding!",
+            "title": "Introduction"
+        },
+        {
+            "location": "/#introduction",
+            "text": "Lime Bootstrap is made to make it easier, better and faster working with Actionpads in Lime CRM. The framework relies heavily on Knockout.js and Twitter Bootstrap, styled and adapted to Lime CRM. The framework is mainly used by simple configuration in combination with  many built in convinience functions but it is also very expandable through the use of custom components.  The framework is \"opininated and convention over configuration\", meaning there should be one and only one way to do things. If you find yourself writing lots of code to do something, or god forbid, needing to modify ANY file in the systems folder, you're propably doing it wrong. The framework is there to guide and help you.  These few steps can  act as a guide    The systems folder or  lbs.html  should never, ever be modified. You can achieve cool and smart functions without ever touching it.    Follow the design guidelines:   The design should be flat, free from gradients and focused on content.  The actionpad is very narrow (~250px), use the height and not the width of the actionpad.  Use appropriate colors  Use appropriate icons  Don't \"brand\" the solution with customers logo and colors.     Keep ActionPad views free from advanced logic, use components for anything advanced    Contribute to a better framework, any improvements, errors or bugfixes will be committed to this git repository.    Happy coding!",
+            "title": "Introduction"
+        },
+        {
+            "location": "/getting_started/",
+            "text": "Getting started\n\n\nUp and running\n\n\nRequirements\n\n\nLime Bootstrap is only meant to be used inside Lime Crm, but for debugging reasons all functionality should work in any browser.\n\n\n\n\nInternet Explorer 11\n\n\nChrome 59+\n\n\n\n\nOlder versions of IE \nwon't\n work!\n\n\n\n\nLIME 10.12 or greater\n\n\n\n\nInstall\n\n\nLime Bootstrap is included in the Lime Core database and nothing is needs to be done in this case. If installing Lime Bootstrap from scratch:\n\n\n\n\nCopy all the folders, \nlbs.html\n and \n_config.js\n to the Actionpad-folder\n\n\nAdd the VBA module \nlbshelper\n found in \nvba\n-folder.\n\n\nChange the URL of all Actionpads in LIME Pro to \nlbs.html\n\n\n\n\nIf you'll like the some basic ActionPad views to start with you can find some \nhere\n\n\nUpdate\n\n\nUpdating LIME Bootstrap is done by downloading the lastest version and replacing some files and updating some VBA.\n\n\n\n\nReplace the system folder and \nlbs.html\n\n\nReplace the VBA module\n\n\n\n\n\n\nWarning\n\n\nPlease note that Windows sometimes blocks dowloaded javascript files. Make sure to right click and unblock javascript files\n\n\n\n\n======================\n\n\nBasic usage\n\n\nA LIME Bootstrap Actionpad\n\n\nAn Actionpad built with LIME Bootstrap has the following structure:\n\n\n<!-- Header section, The colorfull thing at the top  -->\n\n\n<\ndiv\n \nclass\n=\n\"header-container [color]\"\n>\n \n<!-- Specify the color of the header. Please see color section for available colors  -->\n\n    \n<\ndiv\n \nclass\n=\n\"header-icon\"\n></\ndiv\n>\n  \n<!-- Specify the icon of the header. Please see icon section for available special icons  -->\n\n    \n<\nh2\n \ndata-bind\n=\n\"\"\n></\nh2\n>\n\n        \n<\nul\n \nclass\n=\n\"info-links\"\n>\n\n            \n<\nli\n \ndata-bind\n=\n\"\"\n>\n \n</\nli\n>\n\n            ...\n        \n</\nul\n>\n\n    \n</\ndiv\n>\n\n\n</\ndiv\n>\n\n\n\n\n<!-- /Header section  -->\n\n\n<!-- Body section  -->\n\n\n\n<\ndiv\n \nclass\n=\n\"menu\"\n>\n \n<!-- Menu  -->\n\n\n\n\n</\ndiv\n>\n\n\n<!-- /Body section  -->\n\n\n\n\n\n\nComponents\n\n\nLIME bootstrap supports all Twitter bootstrap elements but has also a few special elements. Please see the \nTwitter bootstrap\n documentation for all cool stuff you have access to.\n\n\nWe also supply the following components:\n\n\n\n\nMenu:\n - \nA menu to hold actions\n\n\nDropdown button:\n - \nA dropdown button styled for LIME Pro\n\n\nHeader section:\n - \nThe top section of every actionpad\n\n\nData carousel:\n - \nA rotating object to hold more objects\n\n\n\n\nSee all our components \nhere\n\n\nFunctions and Apps\n\n\nAll Twitter bootstrap functions are included, please see the \nTwitter bootstrap documentation\n\nLIME Bootstraps allows you to load small components we call apps, as a compliment to Twitter Bootstraps components. Apps can be found \nhere\n\n\nTo start an app add this HTML to your view:\n\n\n<\ndiv\n \ndata-app\n=\n\"{app:'[Name of app]',\n\n\n                config:{\n\n\n                  [App config]\n\n\n            }}\"\n>\n\n\n</\ndiv\n>\n\n\n\n\n\n\nEach app has it's own instructions how to start and install them. Some apps require VBA and/or stored procedures to be added.\n\n\nBindings and filters\n\n\nAs we relay heavily on knockout their \ndata-bind=\"\"\n syntax is used through out the framework. The \ndata-bind=\"\"\n syntax is a used as a property on an html element. In a \ndata-bind\n you add \nbindings\n, actions or triggers, to perform actions. All Knockout bindings are available, but also a few custom bindings to make your life easier.\nRead more about bindings and Knockout \nhere\n and try the tutorial \nhere\n\n\nA basic example of use of a knockout binding:\n\n\n<\nli\n \ndata-bind\n=\n\"text:company.name\"\n></\nli\n>\n\n\n\n\n\n\nYou can also use a short hand for bindnings, using brackets. The above example can also be written as\n\n\n<\nli\n>\n{{company.name}}\n</\nli\n>\n\n\n\n\n\n\nYou can read more about this short hand syntax \nhere\n\n\nAs default you only have access to the data of the ActiveInspector!\n\n\nKnockout bindings\n\n\nKnockout supplies a large set of bindings, which all can be found \nhere\n\nOur full documentation can be found \nhere\n\n\nSome of the more common and useful bindings\n\n\n\n\nvisible:\n - \nhides or shows a html element based on an boolean expression\n\n\ntext:\n - \nDisplays a variable as text\n\n\nhtml:\n - \nPrepends the supplied font awesome icon to the html element\n\n\ncss:\n - \nAdd or remove CSS classes\n\n\nstyle:\n - \nAdd styling attributes\n\n\nattr\n - \nSet value of any html attribute\n\n\nforeach:\n - \nLoop through an array\n\n\n\n\nCustom bindings\n\n\nTo make your life easier we have implemented a few custom bindnings.\nList of custom handlers:\n\n\n\n\ncall:\n - \nTries to call the provided phone number\n\n\nemail:\n - \nTries to email the provided address\n\n\nicon:\n - \nPrepends the supplied font awesome icon to the html element\n\n\nlimeLink:\n - \nCreates an LIME link from a provided relationship field, for example person.company\n\n\nopenURL:\n - \nOpens the supplied URL in a external browser\n\n\nshowOnMap:\n - \nOpens Google Maps with the supplied data as a search query\n\n\nvba:\n - \nProvide an string of an VBA function with it's parameters separated by commas\n\n\nvbaVisible:\n - \nExtends knockouts 'visible:' by executing the supplied Boolean VBA function\n\n\nappInvoke:\n - \nInvokes an old-style actionpad app like textfileimport or duplicatemerge\n\n\npopover:\n - \nDisplays a popover\n\n\ntooltip:\n - \nDisplays a bootstrap tooltip\n\n\n\n\nFilters\n\n\nFilters are a smart and easy way to format your data in a binding\nA filter is a function transforming your binding data and outputting a formated version of it.\n\n\n<\nli\n \ndata-bind\n=\n\"text:deal.value | currency: SEK\"\n></\nli\n>\n\n\n<\nli\n>\n{{deal.value | currency: SEK}}\n</\nli\n>\n\n\n\n\n\n\nThis will produce a nicely formated value of a deal, example: \"10 000SEK\"\n\n\nList of filters:\n\n\n\n\ndefault:\n - If the value is blank, null, or an empty array, replace it with the given default value.\n\n\nfit:\n[:\n][:\n]\n - Trim the value if it\u2019s longer than the given length. The trimmed portion is replaced with ... or the replacement value, if given. By default, the value is trimmed on the right but can be changed to left or middle through the where option. For example: name | fit:10::'middle' will convert Shakespeare to Shak...are.\n\n\njson[:space]\n - Convert the value to a JSON string using ko.toJSON. You can give a space value to format the JSON output.\n\n\nlowercase\n - Convert the value to lowercase.\n\n\nnumber:\n - Rounds a number of desired number of decimals\n\n\nreplace:\n:\n - Perform a search and replace on the value using String#replace.\n\n\nuppercase\n - Convert the value to uppercase.\n\n\ncurrency:\n:\n - Formats a number with to a currency with a space a separate every \n number. Default 1000\n\n\npercent:\n - Formats a decimal number as percent 0,01 > 1%\n\n\nfromNow:\n - Formats a date as a human readable text as for how long ago the date was. Example 2000-01-01 > \"Over ten years ago\"\n\n\n\n\nTranslation: Handling multiple languages\n\n\nAll available translations from the Localization table are automatically available in the actionpad context. The same language as the logged in user uses is automatically used. The translations are cached in a dictionary to increase speed, but requires you to run \nThisApplication.Setup\n to rebuild the dictionary if you add translations or make changes.\n\n\n<\nli\n \ndata-bind\n=\n\"text:localize.ActionPad_Todo.addTodo\"\n></\nli\n>\n\n\n\n\n\n\nThe example below uses the versatile knockout binding \nattr\n to add a tooltip with localization support. It also uses the custom LIME Bootstrap bindings \nvba\n and \nicon\n.\n\n\n<\nli\n \ndata-bind\n=\n\"vba:'Actionpad_Person.newComment', text:localize.Actionpad_Person.t_newcomment, icon:'fa-comment', attr: { title: localize.Actionpad_Person.tooltip_newcomment }\"\n></\nli\n>\n\n\n\n\n\n\nTechnical notes\n\n\nThe translations are added to the global view model and are thus available in your apps.\n\n\nNote that it is not possible to use localization in the standard way, e.g., \nlocalize.Actionpad_Person.t_newcomment\n within a block where you are using the knockout binding \nwith\n.\n\n\nFetching data from fields in LIME Pro\n\n\nAll fields from the ActiveInspector are automagically available for you to use in your view. The syntax is \n[Record class name].[field database name].[property]\n.\n\n\nThe available properties are (in order of relevance):\n\n   \n.text\n\n\n   \n.value\n\n*   \n.key\n  - \navailable for set and list fields_\n*   \n.class__ - \navailable for relation fields\n\n\n<!-- Company Actionpad showing the name of the company-->\n\n\n<\nli\n \ndata-bind\n=\n\"text:company.name.text\"\n></\nli\n>\n\n\n<!-- Shorthand-->\n<\nli\n>\n{{company.name.text}}\n</\nli\n>\n\n\n<!-- Person Actionpad using the id of the company relation as a parameter to a VBA-function. Note the Javascript syntax in the Knockout bindning  -->\n\n\n<\nli\n \ndata-bind\n=\n\"vba:'SomeFunction,' + person.company.value\"\n></\nli\n>\n\n\n<!-- Business Actionpad showing the optionKey from a set-list -->\n\n\n<\nli\n \ndata-bind\n=\n\"text:business.businesstatus.key\"\n></\nli\n>\n\n\n\n\n\n\nGoing beyond the ActiveInspector - Loading additional data\n\n\nIt is common to use data from more than the ActiveInspector and the following syntax will NOT work \n<li data-bind=\"text:person.company.phone.text\"></li>\n\n\nInstead you can load additional data by requesting data sources in \n_config.js\n. You'll find more information about this in the advanced section.\n\n\nThe loaded data can then be access by:\n\n\n<!-- Loading person and company info on a helpdesk actionpad-->\n\n\n<\nli\n \ndata-bind\n=\n\"text:helpdesk.company.text\"\n></\nli\n>\n\n\n<\nli\n \ndata-bind\n=\n\"text:person.phone.text\"\n></\nli\n>\n\n\n<\nli\n \ndata-bind\n=\n\"text:person.mobilephone.text\"\n></\nli\n>\n\n\n<\nli\n \ndata-bind\n=\n\"text:company.phone.text\"\n></\nli\n>\n\n\n\n\n\n\nWorking with time and dates\n\n\nDates are a hassle, except when you have the awesome library \nMoment.js\n.\n\n\nTo create a iso-date:\n\nmoment()\n\n\nTo parse almost any date format:\n\nmoment([CRAZY DATE FORMAT])\n\n\nMoment even makes time and dates readable to people.\n\nmoment().timeAgo(2011-01-01)\n will give you, \"A few years ago\"\n\n\nMoment is automagically setup to use the same language and date-format as the language of the LIME Client.\nRemember to use it and check out it further!\n\n\nThe log/watch\n\n\nBootstap will give you some debug- and log views to help you out.\n\n\nKeyboard shortcuts\n\n\nThe different view can be opened with shortcuts provided the actionpad is in focus.\n\n\n\n\n\n\n\n\nFunction\n\n\nCommand\n\n\n\n\n\n\n\n\n\n\nReload actionpad\n\n\nctrl + shift + r\n\n\n\n\n\n\nOpen log\n\n\nctrl + shift + l\n\n\n\n\n\n\nOpen watch\n\n\nctrl + shift + w\n\n\n\n\n\n\nClose log/watch window\n\n\nq",
+            "title": "Getting started"
+        },
+        {
+            "location": "/getting_started/#getting-started",
+            "text": "",
+            "title": "Getting started"
+        },
+        {
+            "location": "/getting_started/#up-and-running",
+            "text": "",
+            "title": "Up and running"
+        },
+        {
+            "location": "/getting_started/#requirements",
+            "text": "Lime Bootstrap is only meant to be used inside Lime Crm, but for debugging reasons all functionality should work in any browser.   Internet Explorer 11  Chrome 59+   Older versions of IE  won't  work!   LIME 10.12 or greater",
+            "title": "Requirements"
+        },
+        {
+            "location": "/getting_started/#install",
+            "text": "Lime Bootstrap is included in the Lime Core database and nothing is needs to be done in this case. If installing Lime Bootstrap from scratch:   Copy all the folders,  lbs.html  and  _config.js  to the Actionpad-folder  Add the VBA module  lbshelper  found in  vba -folder.  Change the URL of all Actionpads in LIME Pro to  lbs.html   If you'll like the some basic ActionPad views to start with you can find some  here",
+            "title": "Install"
+        },
+        {
+            "location": "/getting_started/#update",
+            "text": "Updating LIME Bootstrap is done by downloading the lastest version and replacing some files and updating some VBA.   Replace the system folder and  lbs.html  Replace the VBA module    Warning  Please note that Windows sometimes blocks dowloaded javascript files. Make sure to right click and unblock javascript files   ======================",
+            "title": "Update"
+        },
+        {
+            "location": "/getting_started/#basic-usage",
+            "text": "",
+            "title": "Basic usage"
+        },
+        {
+            "location": "/getting_started/#a-lime-bootstrap-actionpad",
+            "text": "An Actionpad built with LIME Bootstrap has the following structure:  <!-- Header section, The colorfull thing at the top  -->  < div   class = \"header-container [color]\" >   <!-- Specify the color of the header. Please see color section for available colors  --> \n     < div   class = \"header-icon\" ></ div >    <!-- Specify the icon of the header. Please see icon section for available special icons  --> \n     < h2   data-bind = \"\" ></ h2 > \n         < ul   class = \"info-links\" > \n             < li   data-bind = \"\" >   </ li > \n            ...\n         </ ul > \n     </ div >  </ div >  <!-- /Header section  -->  <!-- Body section  -->  < div   class = \"menu\" >   <!-- Menu  -->  </ div >  <!-- /Body section  -->",
+            "title": "A LIME Bootstrap Actionpad"
+        },
+        {
+            "location": "/getting_started/#components",
+            "text": "LIME bootstrap supports all Twitter bootstrap elements but has also a few special elements. Please see the  Twitter bootstrap  documentation for all cool stuff you have access to.  We also supply the following components:   Menu:  -  A menu to hold actions  Dropdown button:  -  A dropdown button styled for LIME Pro  Header section:  -  The top section of every actionpad  Data carousel:  -  A rotating object to hold more objects   See all our components  here",
+            "title": "Components"
+        },
+        {
+            "location": "/getting_started/#functions-and-apps",
+            "text": "All Twitter bootstrap functions are included, please see the  Twitter bootstrap documentation \nLIME Bootstraps allows you to load small components we call apps, as a compliment to Twitter Bootstraps components. Apps can be found  here  To start an app add this HTML to your view:  < div   data-app = \"{app:'[Name of app]',                  config:{                    [App config]              }}\" >  </ div >   Each app has it's own instructions how to start and install them. Some apps require VBA and/or stored procedures to be added.",
+            "title": "Functions and Apps"
+        },
+        {
+            "location": "/getting_started/#bindings-and-filters",
+            "text": "As we relay heavily on knockout their  data-bind=\"\"  syntax is used through out the framework. The  data-bind=\"\"  syntax is a used as a property on an html element. In a  data-bind  you add  bindings , actions or triggers, to perform actions. All Knockout bindings are available, but also a few custom bindings to make your life easier.\nRead more about bindings and Knockout  here  and try the tutorial  here  A basic example of use of a knockout binding:  < li   data-bind = \"text:company.name\" ></ li >   You can also use a short hand for bindnings, using brackets. The above example can also be written as  < li > {{company.name}} </ li >   You can read more about this short hand syntax  here  As default you only have access to the data of the ActiveInspector!",
+            "title": "Bindings and filters"
+        },
+        {
+            "location": "/getting_started/#knockout-bindings",
+            "text": "Knockout supplies a large set of bindings, which all can be found  here \nOur full documentation can be found  here  Some of the more common and useful bindings   visible:  -  hides or shows a html element based on an boolean expression  text:  -  Displays a variable as text  html:  -  Prepends the supplied font awesome icon to the html element  css:  -  Add or remove CSS classes  style:  -  Add styling attributes  attr  -  Set value of any html attribute  foreach:  -  Loop through an array",
+            "title": "Knockout bindings"
+        },
+        {
+            "location": "/getting_started/#custom-bindings",
+            "text": "To make your life easier we have implemented a few custom bindnings.\nList of custom handlers:   call:  -  Tries to call the provided phone number  email:  -  Tries to email the provided address  icon:  -  Prepends the supplied font awesome icon to the html element  limeLink:  -  Creates an LIME link from a provided relationship field, for example person.company  openURL:  -  Opens the supplied URL in a external browser  showOnMap:  -  Opens Google Maps with the supplied data as a search query  vba:  -  Provide an string of an VBA function with it's parameters separated by commas  vbaVisible:  -  Extends knockouts 'visible:' by executing the supplied Boolean VBA function  appInvoke:  -  Invokes an old-style actionpad app like textfileimport or duplicatemerge  popover:  -  Displays a popover  tooltip:  -  Displays a bootstrap tooltip",
+            "title": "Custom bindings"
+        },
+        {
+            "location": "/getting_started/#filters",
+            "text": "Filters are a smart and easy way to format your data in a binding\nA filter is a function transforming your binding data and outputting a formated version of it.  < li   data-bind = \"text:deal.value | currency: SEK\" ></ li >  < li > {{deal.value | currency: SEK}} </ li >   This will produce a nicely formated value of a deal, example: \"10 000SEK\"  List of filters:   default:  - If the value is blank, null, or an empty array, replace it with the given default value.  fit: [: ][: ]  - Trim the value if it\u2019s longer than the given length. The trimmed portion is replaced with ... or the replacement value, if given. By default, the value is trimmed on the right but can be changed to left or middle through the where option. For example: name | fit:10::'middle' will convert Shakespeare to Shak...are.  json[:space]  - Convert the value to a JSON string using ko.toJSON. You can give a space value to format the JSON output.  lowercase  - Convert the value to lowercase.  number:  - Rounds a number of desired number of decimals  replace: :  - Perform a search and replace on the value using String#replace.  uppercase  - Convert the value to uppercase.  currency: :  - Formats a number with to a currency with a space a separate every   number. Default 1000  percent:  - Formats a decimal number as percent 0,01 > 1%  fromNow:  - Formats a date as a human readable text as for how long ago the date was. Example 2000-01-01 > \"Over ten years ago\"",
+            "title": "Filters"
+        },
+        {
+            "location": "/getting_started/#translation-handling-multiple-languages",
+            "text": "All available translations from the Localization table are automatically available in the actionpad context. The same language as the logged in user uses is automatically used. The translations are cached in a dictionary to increase speed, but requires you to run  ThisApplication.Setup  to rebuild the dictionary if you add translations or make changes.  < li   data-bind = \"text:localize.ActionPad_Todo.addTodo\" ></ li >   The example below uses the versatile knockout binding  attr  to add a tooltip with localization support. It also uses the custom LIME Bootstrap bindings  vba  and  icon .  < li   data-bind = \"vba:'Actionpad_Person.newComment', text:localize.Actionpad_Person.t_newcomment, icon:'fa-comment', attr: { title: localize.Actionpad_Person.tooltip_newcomment }\" ></ li >",
+            "title": "Translation: Handling multiple languages"
+        },
+        {
+            "location": "/getting_started/#technical-notes",
+            "text": "The translations are added to the global view model and are thus available in your apps.  Note that it is not possible to use localization in the standard way, e.g.,  localize.Actionpad_Person.t_newcomment  within a block where you are using the knockout binding  with .",
+            "title": "Technical notes"
+        },
+        {
+            "location": "/getting_started/#fetching-data-from-fields-in-lime-pro",
+            "text": "All fields from the ActiveInspector are automagically available for you to use in your view. The syntax is  [Record class name].[field database name].[property] .  The available properties are (in order of relevance):     .text      .value \n*    .key   -  available for set and list fields_\n*    .class__ -  available for relation fields  <!-- Company Actionpad showing the name of the company-->  < li   data-bind = \"text:company.name.text\" ></ li >  <!-- Shorthand--> < li > {{company.name.text}} </ li >  <!-- Person Actionpad using the id of the company relation as a parameter to a VBA-function. Note the Javascript syntax in the Knockout bindning  -->  < li   data-bind = \"vba:'SomeFunction,' + person.company.value\" ></ li >  <!-- Business Actionpad showing the optionKey from a set-list -->  < li   data-bind = \"text:business.businesstatus.key\" ></ li >",
+            "title": "Fetching data from fields in LIME Pro"
+        },
+        {
+            "location": "/getting_started/#going-beyond-the-activeinspector-loading-additional-data",
+            "text": "It is common to use data from more than the ActiveInspector and the following syntax will NOT work  <li data-bind=\"text:person.company.phone.text\"></li>  Instead you can load additional data by requesting data sources in  _config.js . You'll find more information about this in the advanced section.  The loaded data can then be access by:  <!-- Loading person and company info on a helpdesk actionpad-->  < li   data-bind = \"text:helpdesk.company.text\" ></ li >  < li   data-bind = \"text:person.phone.text\" ></ li >  < li   data-bind = \"text:person.mobilephone.text\" ></ li >  < li   data-bind = \"text:company.phone.text\" ></ li >",
+            "title": "Going beyond the ActiveInspector - Loading additional data"
+        },
+        {
+            "location": "/getting_started/#working-with-time-and-dates",
+            "text": "Dates are a hassle, except when you have the awesome library  Moment.js .  To create a iso-date: moment()  To parse almost any date format: moment([CRAZY DATE FORMAT])  Moment even makes time and dates readable to people. moment().timeAgo(2011-01-01)  will give you, \"A few years ago\"  Moment is automagically setup to use the same language and date-format as the language of the LIME Client.\nRemember to use it and check out it further!",
+            "title": "Working with time and dates"
+        },
+        {
+            "location": "/getting_started/#the-logwatch",
+            "text": "Bootstap will give you some debug- and log views to help you out.",
+            "title": "The log/watch"
+        },
+        {
+            "location": "/getting_started/#keyboard-shortcuts",
+            "text": "The different view can be opened with shortcuts provided the actionpad is in focus.     Function  Command      Reload actionpad  ctrl + shift + r    Open log  ctrl + shift + l    Open watch  ctrl + shift + w    Close log/watch window  q",
+            "title": "Keyboard shortcuts"
+        },
+        {
+            "location": "/included_components/",
+            "text": "The header section\n\n\nThe header section is the colorful header of each actionpad. The following colors are provided:\n\n\n\n\nUsage:\n\n\n<\ndiv\n \nclass\n=\n\"header-container [insert color here]\"\n>\n\n\n\n\n\n\nThe menu\n\n\nA menu can be created by the following HTML:\n\n\n \n<\nul\n \nclass\n=\n\"expandable collapsed\"\n>\n\n        \n<\nli\n \nclass\n=\n\"menu-header\"\n>\nText\n</\nli\n>\n\n       ...\n\n</\nul\n>\n\n\n\n\n\n\nA menu has two properties, \nExpandable\n and \ncollapsed\n. The are added in the \n<ul>\n  class:\n\n<ul class=\"menu expandable collapsed\">\n\n\nExpandable:\n The menu can be collapsed by clicking the header\n\nCollapsed:\n The menu is collapsed when the actionpad is loaded. Stupid to use without using Expandable...\n\n\nDropdown button:\n\n\nA dropdown button can contain many options, while taking up very little space.\n\n\n<\ndiv\n \nclass\n=\n\"btn-group btn-group-lime\"\n  \ndata-bind\n=\n\"visible:todo.done.value != 1\"\n>\n\n    \n<\nbutton\n \nclass\n=\n\"btn btn-lime btn-default dropdown-toggle\"\n \ndata-toggle\n=\n\"dropdown\"\n \ndata-bind\n=\n\" text:localize.Actionpad_Todo.headermoveforward, icon: 'fa-caret-down'\"\n>\n\n    \n</\nbutton\n>\n\n    \n<\nul\n \nclass\n=\n\"dropdown-menu\"\n>\n\n        \n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_todo.Postpone, d, 1', text:localize.Actionpad_Todo.mf1d\"\n></\nli\n>\n\n        \n<\nli\n \nclass\n=\n\"divider\"\n></\nli\n>\n\n        \n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_todo.Postpone, ww, 1', text:localize.Actionpad_Todo.mf1w\"\n></\nli\n>\n\n        \n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_todo.Postpone, ww, 2', text:localize.Actionpad_Todo.mf2w\"\n></\nli\n>\n\n        \n<\nli\n \nclass\n=\n\"divider\"\n></\nli\n>\n\n        \n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_todo.Postpone, m, 1', text:localize.Actionpad_Todo.mf1m\"\n></\nli\n>\n\n        \n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_todo.Postpone, m, 6', text:localize.Actionpad_Todo.mf6m\"\n></\nli\n>\n\n        \n<\nli\n \nclass\n=\n\"divider\"\n></\nli\n>\n\n        \n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_todo.Postpone, yyyy, 1', text:localize.Actionpad_Todo.mf1y\"\n></\nli\n>\n\n    \n</\nul\n>\n\n\n</\ndiv\n>\n\n\n\n\n\n\nData carousel\n\n\nCreates a data carousel that can be used when your actionpad is full of stuff. The carousel will build a pages for every first level child regardless of type. OBS! You always need to set height.\n\n\n\n\nExamples\n\n\n\n\n        \n<\ndiv\n \ndata-carousel\n=\n\"{height:'25%'}\"\n>\n\n            \n<\ndiv\n \ndata-app\n=\n\"{app:'Fulltextsearch',config:{}}\"\n></\ndiv\n>\n\n            \n<\ndiv\n>\nThis is your second div\n</\ndiv\n>\n\n            \n<\nul\n>\n\n                \n<\nli\n>\nLBS rules\n</\nli\n>\n\n            \n</\nul\n>\n\n        \n</\ndiv\n>",
+            "title": "Included components"
+        },
+        {
+            "location": "/included_components/#the-header-section",
+            "text": "The header section is the colorful header of each actionpad. The following colors are provided:   Usage:  < div   class = \"header-container [insert color here]\" >",
+            "title": "The header section"
+        },
+        {
+            "location": "/included_components/#the-menu",
+            "text": "A menu can be created by the following HTML:    < ul   class = \"expandable collapsed\" > \n         < li   class = \"menu-header\" > Text </ li > \n       ... </ ul >   A menu has two properties,  Expandable  and  collapsed . The are added in the  <ul>   class: <ul class=\"menu expandable collapsed\">  Expandable:  The menu can be collapsed by clicking the header Collapsed:  The menu is collapsed when the actionpad is loaded. Stupid to use without using Expandable...",
+            "title": "The menu"
+        },
+        {
+            "location": "/included_components/#dropdown-button",
+            "text": "A dropdown button can contain many options, while taking up very little space.  < div   class = \"btn-group btn-group-lime\"    data-bind = \"visible:todo.done.value != 1\" > \n     < button   class = \"btn btn-lime btn-default dropdown-toggle\"   data-toggle = \"dropdown\"   data-bind = \" text:localize.Actionpad_Todo.headermoveforward, icon: 'fa-caret-down'\" > \n     </ button > \n     < ul   class = \"dropdown-menu\" > \n         < li   data-bind = \"vba:'ActionPad_todo.Postpone, d, 1', text:localize.Actionpad_Todo.mf1d\" ></ li > \n         < li   class = \"divider\" ></ li > \n         < li   data-bind = \"vba:'ActionPad_todo.Postpone, ww, 1', text:localize.Actionpad_Todo.mf1w\" ></ li > \n         < li   data-bind = \"vba:'ActionPad_todo.Postpone, ww, 2', text:localize.Actionpad_Todo.mf2w\" ></ li > \n         < li   class = \"divider\" ></ li > \n         < li   data-bind = \"vba:'ActionPad_todo.Postpone, m, 1', text:localize.Actionpad_Todo.mf1m\" ></ li > \n         < li   data-bind = \"vba:'ActionPad_todo.Postpone, m, 6', text:localize.Actionpad_Todo.mf6m\" ></ li > \n         < li   class = \"divider\" ></ li > \n         < li   data-bind = \"vba:'ActionPad_todo.Postpone, yyyy, 1', text:localize.Actionpad_Todo.mf1y\" ></ li > \n     </ ul >  </ div >",
+            "title": "Dropdown button:"
+        },
+        {
+            "location": "/included_components/#data-carousel",
+            "text": "Creates a data carousel that can be used when your actionpad is full of stuff. The carousel will build a pages for every first level child regardless of type. OBS! You always need to set height.   Examples            < div   data-carousel = \"{height:'25%'}\" > \n             < div   data-app = \"{app:'Fulltextsearch',config:{}}\" ></ div > \n             < div > This is your second div </ div > \n             < ul > \n                 < li > LBS rules </ li > \n             </ ul > \n         </ div >",
+            "title": "Data carousel"
+        },
+        {
+            "location": "/bindings_and_filters/",
+            "text": "Bindings\n\n\nvbaVisible: Hiding or showing elements\n\n\nIt is common that some elements only should be visible for certain users or when specific conditions apply. It can be done in two different ways. Either use the LIME Bootstrap data-binding \nvbaVisible:\n or use the knockout binding \nvisible:\n.\n\n\nThe \nvbaVisible:\n is used as follows. A VBA function is called, handling the logic whether the element should be visible or not, returning a boolean.\n\ntrue:\n Element is visible\n\nfalse:\n Element hidden\n\n\nIn complex cases the VBA-function can take input parameters to reduce the number of VBA functions required.\n\n\n<\nli\n \ndata-bind\n=\n\"vbaVisible:'ActionPad_Helpdesk.HideLinks, take'\"\n></\nli\n>\n\n\n\n\n\n\nYou can also use knockout's built in handler \nvisible:\n to hide or show elements. Any valid Javascript will be evaluated. Example:\n\n\n<!-- Shows an bootstrap alert if the todo is late. Moment.js is used to parse and handle dates.-->\n\n\n<\ndiv\n \nclass\n=\n\"alert alert-error\"\n \ndata-bind\n=\n\"\n\n\n   visible: todo.endtime.value !== null && (moment(todo.endtime.value) < moment() && todo.done.value != 1),\n\n\n   text: 'The task is ' + (todo.endtime.value != null ? moment(todo.endtime.value).fromNow(true) : '' )+ ' late!',\n\n\n   icon:'fa-bell'\"\n \n>\n\n\n</\ndiv\n>\n\n\n\n\n\n\nThe binding \nvbaVisible:\n is only able to execute a given VBA function that returns true or false. If you need to add some kind of code on top of that VBA function, use the original knockout binding \nvisible:\n instead. This example uses the opposite of the function result, but any other javascript code would also work fine.\n\n\n<\ndiv\n \ndata-bind\n=\n\"visible:!lbs.common.executeVba('App_MoveDate.moveDaysPossible')\"\n>\n\n...\n\n</\ndiv\n>\n\n\n\n\n\n\nvba: Executing VBA-functions and specific actions\n\n\nvba:\n is used to trigger VBA-functions and specific actions on click. To call a VBA function simply use:\n\n\n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_Helpdesk.Take'\"\n></\nli\n>\n\n\n\n\n\n\nInput parameters are provided by simply separating them by commas.\n\n\n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_Helpdesk.Park, 1, t_park_1_hour'\"\n></\nli\n>\n\n\n\n\n\n\nYou can also use any available data in the actionpad as an input to the function through concatenating a string\n\n\n<\nli\n \ndata-bind\n=\n\"vba:'ActionPad_Helpdesk.DoSomethingWithTheRecord,' + helpdesk.idhelpdesk.value\"\n></\nli\n>\n\n ```\n\n\n##showOnMap: Showing an address on a map\n\n*   __showOnMap:__ - Searches Google Maps for the provided address.\n\n```html\n    \n<\nli\n \ndata-bind\n=\n\"text:company.postalcity.text, showOnMap: company.fullpostaladdress.text, icon: 'fa-map-marker'\"\n></\nli\n>\n\n\n\n\n\n\nCall: Call a phone number\n\n\n\n\ncall:\n - Ads an tel: link to the HTML wich triggers an built in softphone software.\n\n\n\n\n    \n<\nli\n \ndata-bind\n=\n\"text: company.phone.text, call: company.phone.text, icon: 'fa-phone'\"\n></\nli\n>\n\n\n\n\n\n\nopenURL: Go to a website\n\n\n\n\nopenURL:\n - Opens the suplied URL in an external browser\n\n\n\n\n     \n<\nli\n \ndata-bind\n=\n\"text:company.www.text, openURL: company.www.text, icon: 'fa-globe'\"\n></\nli\n>\n\n\n\n\n\n\nlimeLink: Go to another LIME Record\n\n\n\n\nlimeLink\n - Tries to create an LIME link to the object provided, please note that the root node of the object is used and not a specific property.\n\n\n\n\n    \n<\nli\n \ndata-bind\n=\n\"text:todo.company.text, limeLink:todo.company, icon:'fa-flag'\"\n></\nli\n>\n\n\n\n\n\n\nemail: Send an email\n\n\n\n\nemail\n - Creates an email. TODO: Should use LIME's built in email factory.\n\n\n\n\n    \n<\nli\n \ndata-bind\n=\n\"text:person.email.text, email:person.email.text, icon:'fa-envelope'\"\n></\nli\n>\n\n\n\n\n\n\nappInvoke: Start an app\n\n\n\n\nappInvoke\n\n\n\n\n    \n<\nli\n \ndata-bind\n=\n\"appInvoke: 'textfileimport\"\n></\nli\n>\n\n\n\n\n\n\npopover: Show additional info\n\n\n\n\npopover\n - Gives you a small overlayer of context that you can design as you like. In its simplest form, it can be used to display informative texts. It can also be initialized as an object with one or several adjustable attributes, allowing for styling both header icon and title. There are also a few pre-defined types with their own set designs.\n\n\n\n\n        \n<\nli\n \ndata-bind\n=\n\"popover: 'This is a popover'\"\n></\nli\n>\n\n\n\n\n\n\nIf the popover is initialized as an object, the following attributes can be configured:\n\n* __icon__\n\nAny of the icons available from Font Awesome.\n\n* __text__\n\nText you want to be displayed.\n\n* __title__\n\nTitle to be displayed in the header section of the popover.\n\n* __color__\n\nBackground color of the header section. All header-colors are avalible.\n\n* __trigger__\n\nWhat event will trigger the event. Only two values are valid here:\n*   hover\n*   click\n\nwhere the default value is 'hover'.\n\n* __placement__\n\nWhere the popover will be displayed in relation to its parent element. The following values are valid here:\n*   top\n*   right\n*   bottom\n*   left\n\nwhere the default value is 'top'.\n\n* __type__\n\nWhat template (if any) should be used. Only the following values are valid:\n*   success\n*   info\n*   error\n*   warning\n*   custom\n\nwhere the default value is 'custom'. The top four alternatives will override all values for 'color', 'title' and 'icon'. These will be replaced by template ones for the specific types.\n\n* __Example without template__\n\n\n\n\n\n            \n<\nli\n \ndata-bind\n=\n \npopover:{\n\n                        \ntext:\n'\nThis\n \nis\n \na\n \npopover\n',\n\n                        \ntitle:\n \n'\nLBS\n \nrules\n',\n\n                        \ntype:\n \n'\ncustom\n',\n\n                        \ncolor:\n'\nmagenta\n',\n\n                        \ntrigger:\n \n'\nclick\n',\n\n                        \nicon:\n \n'\nfa-check\n',\n\n                        \nplacement:\n \n'\ntop\n'\n\n                    \n},\n \ntext:\n \n'\nPopoverclick\n'\"\n>\n\">\n</\nli\n>\n\n\n\n\n\n\n* __Example with template__\n\n\n\n\n\n            \n<\nli\n \ndata-bind\n=\n\"popover:{text:'This is a popover.',type:'info'}\"\n></\nli\n>\n\n\n\n\n\n\ntooltip: Show a helping tooltip\n\n\n\n\ntooltip\n - Gives you a good looking tooltip. \nBootstrap\n. You can design where you like the tooltip to show by sending a object with a placement.\n\n\n\n\n        \n<\na\n \ndata-bind\n=\n\"text:'Andreas', tooltip: 'Konsult'\"\n></\na\n>\n\n        \n<\na\n \ndata-bind\n=\n\"text:'Andreas', tooltip: {text:'Konsult',placement:'right'}\"\n></\na\n>\n\n\n\n\n\n\nFilters\n\n\nA filter in knockout punches is a way of 'piping' a text binding through a pre-defined filter to format the value in a desired way. The filter is initiated using the | sign followed by the name of the filter and any necessary parameter inputs to the filter.\n\n\nCurrency\n\n\nThe currency filter can be combined with a text data-bind to format a number as a currency. The filter takes two optional parameters - currency and divider. The currency is the unit in which you want to present the formatted number, e.g. $ or GBP or SEK. The divider lets you decide what delimiter to use for formatting the number.\n\n\n<\ndiv\n \ndata-bind\n=\n\"text: 100000 | currency:'$':','\"\n></\ndiv\n>\n\n\n\n\n\n\nThis filter will format the number 100000 as $100,000. The following code\n\n\n<\ndiv\n \ndata-bind\n=\n\"text: 100000 | currency:'SEK'\"\n></\ndiv\n>\n\n\n\n\n\n\nwill result in the formatted value 100 000 SEK.",
+            "title": "Bindnings & filters"
+        },
+        {
+            "location": "/bindings_and_filters/#bindings",
+            "text": "",
+            "title": "Bindings"
+        },
+        {
+            "location": "/bindings_and_filters/#vbavisible-hiding-or-showing-elements",
+            "text": "It is common that some elements only should be visible for certain users or when specific conditions apply. It can be done in two different ways. Either use the LIME Bootstrap data-binding  vbaVisible:  or use the knockout binding  visible: .  The  vbaVisible:  is used as follows. A VBA function is called, handling the logic whether the element should be visible or not, returning a boolean. true:  Element is visible false:  Element hidden  In complex cases the VBA-function can take input parameters to reduce the number of VBA functions required.  < li   data-bind = \"vbaVisible:'ActionPad_Helpdesk.HideLinks, take'\" ></ li >   You can also use knockout's built in handler  visible:  to hide or show elements. Any valid Javascript will be evaluated. Example:  <!-- Shows an bootstrap alert if the todo is late. Moment.js is used to parse and handle dates.-->  < div   class = \"alert alert-error\"   data-bind = \"     visible: todo.endtime.value !== null && (moment(todo.endtime.value) < moment() && todo.done.value != 1),     text: 'The task is ' + (todo.endtime.value != null ? moment(todo.endtime.value).fromNow(true) : '' )+ ' late!',     icon:'fa-bell'\"   >  </ div >   The binding  vbaVisible:  is only able to execute a given VBA function that returns true or false. If you need to add some kind of code on top of that VBA function, use the original knockout binding  visible:  instead. This example uses the opposite of the function result, but any other javascript code would also work fine.  < div   data-bind = \"visible:!lbs.common.executeVba('App_MoveDate.moveDaysPossible')\" > \n... </ div >",
+            "title": "vbaVisible: Hiding or showing elements"
+        },
+        {
+            "location": "/bindings_and_filters/#vba-executing-vba-functions-and-specific-actions",
+            "text": "vba:  is used to trigger VBA-functions and specific actions on click. To call a VBA function simply use:  < li   data-bind = \"vba:'ActionPad_Helpdesk.Take'\" ></ li >   Input parameters are provided by simply separating them by commas.  < li   data-bind = \"vba:'ActionPad_Helpdesk.Park, 1, t_park_1_hour'\" ></ li >   You can also use any available data in the actionpad as an input to the function through concatenating a string  < li   data-bind = \"vba:'ActionPad_Helpdesk.DoSomethingWithTheRecord,' + helpdesk.idhelpdesk.value\" ></ li > \n ```\n\n\n##showOnMap: Showing an address on a map\n\n*   __showOnMap:__ - Searches Google Maps for the provided address.\n\n```html\n     < li   data-bind = \"text:company.postalcity.text, showOnMap: company.fullpostaladdress.text, icon: 'fa-map-marker'\" ></ li >",
+            "title": "vba: Executing VBA-functions and specific actions"
+        },
+        {
+            "location": "/bindings_and_filters/#call-call-a-phone-number",
+            "text": "call:  - Ads an tel: link to the HTML wich triggers an built in softphone software.        < li   data-bind = \"text: company.phone.text, call: company.phone.text, icon: 'fa-phone'\" ></ li >",
+            "title": "Call: Call a phone number"
+        },
+        {
+            "location": "/bindings_and_filters/#openurl-go-to-a-website",
+            "text": "openURL:  - Opens the suplied URL in an external browser         < li   data-bind = \"text:company.www.text, openURL: company.www.text, icon: 'fa-globe'\" ></ li >",
+            "title": "openURL: Go to a website"
+        },
+        {
+            "location": "/bindings_and_filters/#limelink-go-to-another-lime-record",
+            "text": "limeLink  - Tries to create an LIME link to the object provided, please note that the root node of the object is used and not a specific property.        < li   data-bind = \"text:todo.company.text, limeLink:todo.company, icon:'fa-flag'\" ></ li >",
+            "title": "limeLink: Go to another LIME Record"
+        },
+        {
+            "location": "/bindings_and_filters/#email-send-an-email",
+            "text": "email  - Creates an email. TODO: Should use LIME's built in email factory.        < li   data-bind = \"text:person.email.text, email:person.email.text, icon:'fa-envelope'\" ></ li >",
+            "title": "email: Send an email"
+        },
+        {
+            "location": "/bindings_and_filters/#appinvoke-start-an-app",
+            "text": "appInvoke        < li   data-bind = \"appInvoke: 'textfileimport\" ></ li >",
+            "title": "appInvoke: Start an app"
+        },
+        {
+            "location": "/bindings_and_filters/#popover-show-additional-info",
+            "text": "popover  - Gives you a small overlayer of context that you can design as you like. In its simplest form, it can be used to display informative texts. It can also be initialized as an object with one or several adjustable attributes, allowing for styling both header icon and title. There are also a few pre-defined types with their own set designs.            < li   data-bind = \"popover: 'This is a popover'\" ></ li >   If the popover is initialized as an object, the following attributes can be configured:\n\n* __icon__\n\nAny of the icons available from Font Awesome.\n\n* __text__\n\nText you want to be displayed.\n\n* __title__\n\nTitle to be displayed in the header section of the popover.\n\n* __color__\n\nBackground color of the header section. All header-colors are avalible.\n\n* __trigger__\n\nWhat event will trigger the event. Only two values are valid here:\n*   hover\n*   click\n\nwhere the default value is 'hover'.\n\n* __placement__\n\nWhere the popover will be displayed in relation to its parent element. The following values are valid here:\n*   top\n*   right\n*   bottom\n*   left\n\nwhere the default value is 'top'.\n\n* __type__\n\nWhat template (if any) should be used. Only the following values are valid:\n*   success\n*   info\n*   error\n*   warning\n*   custom\n\nwhere the default value is 'custom'. The top four alternatives will override all values for 'color', 'title' and 'icon'. These will be replaced by template ones for the specific types.\n\n* __Example without template__               < li   data-bind =   popover:{ \n                         text: ' This   is   a   popover ', \n                         title:   ' LBS   rules ', \n                         type:   ' custom ', \n                         color: ' magenta ', \n                         trigger:   ' click ', \n                         icon:   ' fa-check ', \n                         placement:   ' top ' \n                     },   text:   ' Popoverclick '\" > \"> </ li >   * __Example with template__               < li   data-bind = \"popover:{text:'This is a popover.',type:'info'}\" ></ li >",
+            "title": "popover: Show additional info"
+        },
+        {
+            "location": "/bindings_and_filters/#tooltip-show-a-helping-tooltip",
+            "text": "tooltip  - Gives you a good looking tooltip.  Bootstrap . You can design where you like the tooltip to show by sending a object with a placement.            < a   data-bind = \"text:'Andreas', tooltip: 'Konsult'\" ></ a > \n         < a   data-bind = \"text:'Andreas', tooltip: {text:'Konsult',placement:'right'}\" ></ a >",
+            "title": "tooltip: Show a helping tooltip"
+        },
+        {
+            "location": "/bindings_and_filters/#filters",
+            "text": "A filter in knockout punches is a way of 'piping' a text binding through a pre-defined filter to format the value in a desired way. The filter is initiated using the | sign followed by the name of the filter and any necessary parameter inputs to the filter.",
+            "title": "Filters"
+        },
+        {
+            "location": "/bindings_and_filters/#currency",
+            "text": "The currency filter can be combined with a text data-bind to format a number as a currency. The filter takes two optional parameters - currency and divider. The currency is the unit in which you want to present the formatted number, e.g. $ or GBP or SEK. The divider lets you decide what delimiter to use for formatting the number.  < div   data-bind = \"text: 100000 | currency:'$':','\" ></ div >   This filter will format the number 100000 as $100,000. The following code  < div   data-bind = \"text: 100000 | currency:'SEK'\" ></ div >   will result in the formatted value 100 000 SEK.",
+            "title": "Currency"
+        },
+        {
+            "location": "/datasources/",
+            "text": "Data sources\n\n\nA core concept in LIME Bootstrap is data sources. A data source is just what it sounds like, a source of data. The source can be many things, like a LIME Inspector, a REST web-service, a stored procedure or a VBA function. Data sources are used both while working with basic views and especially when working with apps.\n\n\nThe datasource configuration takes a paramter \ntype\n and then other source specific params.\n\n\nA data source can also take a parameter \n\"alias\"\n, which lets you specify a name for the data source in viewModel. This might be usefull if you have multiple sources on the same table wich may couse collisions.\n\n\nExample:\n\n\n \ndataSources\n:\n\n        \n[\n\n            \n{\ntype\n:\n \n'activeInspector'\n},\n\n            \n{\ntype\n:\n \n'localization'\n},\n\n            \n{\ntype\n:\n \n'relatedRecord'\n,\n \nsource\n:\n \n'person'\n,\n \nview\n:\n \n'name;phone'\n \n,\n \nalias\n:\n \n'contact'\n},\n\n            \n{\ntype\n:\n \n'storedProcedure'\n,\n \nsource\n:\n \n''\n}\n\n        \n],\n\n        \nautorefresh\n \n:\n \nfalse\n\n\n\n\n\n\nNote that autorefresh isn't implemented yet!\n\n\nThe available data sources are:\n\n\nactiveInspector\n\n\nFetch data from the ActiveInspector\n\n\nThe datasource takes no additional params.\n\n\nrecord\n\n\nExecute specified VBA-function which must return a Record object.\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nName of VBA-function\n\n\n\n\n\n\n\n\nPassInspectorParam\n\n\nPass activeInspector id for lookups\n\n\nfalse\n\n\n\n\n\n\n\n\nrecords\n\n\nExecute specified VBA-function which must return a Records set object.\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nName of VBA-function\n\n\n\n\n\n\n\n\nPassInspectorParam\n\n\nPass activeInspector id for lookups\n\n\nfalse\n\n\n\n\n\n\n\n\nrelatedRecord\n\n\nLoads additonal fields from a record connected to the active inspector.\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nrelationfield on activeinspector\n\n\n\n\n\n\nview\n\n\nsemicolon separeted list of fields to fetch\n\n\n\n\n\n\n\n\nxml\n\n\nExecute specified VBA-function which must return a XML as string\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\nDefault\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nName of VBA-function\n\n\n\n\n\n\n\n\nPassInspectorParam\n\n\nPass activeInspector id for lookups\n\n\nfalse\n\n\n\n\n\n\n\n\nlocalization\n\n\nExecute specified VBA-function which must return a Records set object.\n\n\nThe datasource takes no additional params.\n\n\nstoredProcedure\n\n\nExecute specified stored procedure. The procedure must return xml.\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nName of stored procedure\n\n\n\n\n\n\n\n\nHTTPGetXml\n\n\nCalls a web-service and expects a xml response.\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nURL\n\n\n\n\n\n\n\n\nSOAPGetXml\n\n\nCalls a SOAP web-service.\n\n\n\n\n\n\n\n\nParam\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nsource\n\n\nURL\n\n\n\n\n\n\naction\n\n\nSOAP action\n\n\n\n\n\n\nxml\n\n\nSOAP request",
+            "title": "Data sources"
+        },
+        {
+            "location": "/datasources/#data-sources",
+            "text": "A core concept in LIME Bootstrap is data sources. A data source is just what it sounds like, a source of data. The source can be many things, like a LIME Inspector, a REST web-service, a stored procedure or a VBA function. Data sources are used both while working with basic views and especially when working with apps.  The datasource configuration takes a paramter  type  and then other source specific params.  A data source can also take a parameter  \"alias\" , which lets you specify a name for the data source in viewModel. This might be usefull if you have multiple sources on the same table wich may couse collisions.",
+            "title": "Data sources"
+        },
+        {
+            "location": "/datasources/#example",
+            "text": "dataSources : \n         [ \n             { type :   'activeInspector' }, \n             { type :   'localization' }, \n             { type :   'relatedRecord' ,   source :   'person' ,   view :   'name;phone'   ,   alias :   'contact' }, \n             { type :   'storedProcedure' ,   source :   '' } \n         ], \n         autorefresh   :   false   Note that autorefresh isn't implemented yet!  The available data sources are:",
+            "title": "Example:"
+        },
+        {
+            "location": "/datasources/#activeinspector",
+            "text": "Fetch data from the ActiveInspector  The datasource takes no additional params.",
+            "title": "activeInspector"
+        },
+        {
+            "location": "/datasources/#record",
+            "text": "Execute specified VBA-function which must return a Record object.     Param  Description  Default      source  Name of VBA-function     PassInspectorParam  Pass activeInspector id for lookups  false",
+            "title": "record"
+        },
+        {
+            "location": "/datasources/#records",
+            "text": "Execute specified VBA-function which must return a Records set object.     Param  Description  Default      source  Name of VBA-function     PassInspectorParam  Pass activeInspector id for lookups  false",
+            "title": "records"
+        },
+        {
+            "location": "/datasources/#relatedrecord",
+            "text": "Loads additonal fields from a record connected to the active inspector.     Param  Description      source  relationfield on activeinspector    view  semicolon separeted list of fields to fetch",
+            "title": "relatedRecord"
+        },
+        {
+            "location": "/datasources/#xml",
+            "text": "Execute specified VBA-function which must return a XML as string     Param  Description  Default      source  Name of VBA-function     PassInspectorParam  Pass activeInspector id for lookups  false",
+            "title": "xml"
+        },
+        {
+            "location": "/datasources/#localization",
+            "text": "Execute specified VBA-function which must return a Records set object.  The datasource takes no additional params.",
+            "title": "localization"
+        },
+        {
+            "location": "/datasources/#storedprocedure",
+            "text": "Execute specified stored procedure. The procedure must return xml.     Param  Description      source  Name of stored procedure",
+            "title": "storedProcedure"
+        },
+        {
+            "location": "/datasources/#httpgetxml",
+            "text": "Calls a web-service and expects a xml response.     Param  Description      source  URL",
+            "title": "HTTPGetXml"
+        },
+        {
+            "location": "/datasources/#soapgetxml",
+            "text": "Calls a SOAP web-service.     Param  Description      source  URL    action  SOAP action    xml  SOAP request",
+            "title": "SOAPGetXml"
+        },
+        {
+            "location": "/custom_components/",
+            "text": "Building apps\n\n\nBasics\n\n\nApps are small standalone tools, used for customer customisations. They are loaded dynamically and added only through a single line of HTML in the Actionpad. The business logic and dataconnection is allways performed by the VBA. This functionallity should be inside a single module. \n\n\nThe general idea of an app is to implement:\n\n\n\n\nA function or procedure to deliver data. VBA or SQL, can deliver data as xml, record or records.\n\n\nA view - An html template with the structure of your app.\n\n\nA view-model - the viewmodel holds a rednering and frontend logic\n\n\n\n\nAn app is initilaized as:\n1. The app is loaded and the config of the app is parsed\n2. Data is loaded from LIME Pro, from your supplied function\n3. The data is converted to a view-model (In this case the view model is just a JSON represenation of the data)\n4. Additional resources are loaded to the app\n5. The view-model is supplied to the app and cam be modified\n6. The app view is loaded from app.html.\n7. The view and view-model is rendered and injected to the actionpad \n\n\nInitiation of an app is executed by the \nlbs.apploader.js\n module and triggered by an \ndata-app:\n-attribute.\n\n\nThe data can be provided as XML, record or records and limebootstrap will then supply the app with an View-model based on the data, free for you to work with. In the view model you will also find all translations and avilable data from the current actionpad viewmodel.   \n\n\n<\ndiv\n \ndata-app\n=\n\"{app:'checklist',config:{canBeUnchecked:true,allowRemove:true, canAddTask:true}} \"\n \n></\ndiv\n>\n\n\n\n\n\n\nPlease note that you can not have a \ndata-app\n and \ndata-bind\n attribute in the same element\n\n\nThe javascript app structure\n\n\nlbs\n.\napploader\n.\nregister\n(\n'template'\n,\n \nfunction\n \n()\n \n{\n \n//Insert name of app here\n\n    \nvar\n \nself\n \n=\n \nthis\n;\n\n\n    \n//config\n\n    \nthis\n.\nconfig\n \n=\n \n{\n\n        \ndataSources\n:\n \n[\n \n//Either provide your data source here, or let the user of your app supplie it\n\n\n        \n],\n\n        \nresources\n:\n \n{\n \n//Add any extra resources that should be loadad. The paths are realtive your app folder, exept libs which are loaded from system/js/\n\n            \nscripts\n:\n \n[],\n\n            \nstyles\n:\n \n[\n'app.css'\n],\n\n            \nlibs\n:\n \n[\n'json2xml.js'\n]\n\n        \n}\n\n    \n},\n\n\n    \n//initialize\n\n    \nthis\n.\ninitialize\n \n=\n \nfunction\n \n(\nnode\n,\n \nviewModel\n)\n \n{\n\n\n        \n//Use this method to setup you app. \n\n        \n//\n\n        \n//The data you requested along with activeInspector are delivered in the variable viewModel.\n\n        \n//You may make any modifications you please to it or replace is with a entirely new one before returning it.\n\n        \n//The returned viewmodel will be used to build your app.\n\n\n\n        \nreturn\n \nviewModel\n;\n\n    \n}\n\n\n\n\n\n\nObject definitions\n\n\nDataSouce\n\n\n{type: '', source: '', alias:''}\n\n\nLimeVersion\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nComment\n\n\n\n\n\n\n\n\n\n\ncomparable\n\n\nint\n\n\n\n\n\n\n\n\nfull\n\n\nstring\n\n\n\n\n\n\n\n\nmajor\n\n\nint\n\n\n\n\n\n\n\n\nminor\n\n\nint\n\n\n\n\n\n\n\n\nbuild\n\n\nint\n\n\n\n\n\n\n\n\n\n\nLibrary attributes\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nComment\n\n\n\n\n\n\n\n\n\n\nlbs.debug\n\n\nint\n\n\nif debug modes has been triggered\n\n\n\n\n\n\nlbs.limeVersion\n\n\nLimeVersion\n\n\n\n\n\n\n\n\nlbs.limeDataConnection\n\n\nobject\n\n\nreference to window.external\n\n\n\n\n\n\nlbs.hasLimeConnection\n\n\nboolean\n\n\nhas reference to lime?\n\n\n\n\n\n\nlbs.activeClass\n\n\nstring\n\n\n\n\n\n\n\n\nlbs.activeDatabase\n\n\nstring\n\n\n\n\n\n\n\n\nlbs.activeServer\n\n\nstring\n\n\n\n\n\n\n\n\nlbs.common.iconTemplate\n\n\nstring\n\n\ntemplate for icon html\n\n\n\n\n\n\n\n\nLibrary helper functions\n\n\nlbs.heper.loadDataSorces()\n\n\nLoads multiple datasources into a JSON objekt\n\n\nSyntax\n\n\nlbs.heper.loadDataSorces(viewModel, DataSources, [override])\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\nComment\n\n\n\n\n\n\n\n\n\n\nviewModel\n\n\narray\n\n\nobject to assign values to\n\n\n\n\n\n\nDataSources\n\n\nArray\n\n\nsources\n\n\n\n\n\n\nOverride\n\n\nboolean\n\n\nif duplicate values should be overriden or thrown away\n\n\n\n\n\n\n\n\nlbs.heper.loadDataSorce()\n\n\nLoads a datasources into a JSON objekt\n\n\nSyntax\n\n\nlbs.heper.loadDataSorce(viewModel, DataSource, [override])\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\nComment\n\n\n\n\n\n\n\n\n\n\nviewModel\n\n\narray\n\n\nobject to assign values to\n\n\n\n\n\n\nDataSource\n\n\nDataSouce\n\n\nsource\n\n\n\n\n\n\nOverride\n\n\nboolean\n\n\nif duplicate values should be overriden or thrown away\n\n\n\n\n\n\n\n\nlbs.common.getErrorText()\n\n\nReturnes a funny error adjective :)\n\n\nSyntax\n\n\nlbs.common.getErrorText()\n\n\nReturn\n\n\nstring\n\n\nlbs.common.escapeHtml()\n\n\nEscape html\n\n\nSyntax\n\n\nlbs.common.escapeHtml(html)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nhtml\n\n\nstring\n\n\n\n\n\n\n###### Return\n\n\n\n\n\n\n\n\nstring\n\n\n\n\n\n\n\n\n\n\nlbs.common.createLimeLink()\n\n\nCreate limelink\n\n\nSyntax\n\n\nlbs.common.createLimeLink(class,id)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nclass\n\n\nstring\n\n\n\n\n\n\nid\n\n\nint\n\n\n\n\n\n\n###### Return\n\n\n\n\n\n\n\n\nstring\n\n\n\n\n\n\n\n\n\n\nlbs.common.getURLParameter()\n\n\nExtract URL parameter from GET variable\n\n\nSyntax\n\n\nlbs.common.getURLParameter(name)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nname\n\n\nstring\n\n\n\n\n\n\n###### Return\n\n\n\n\n\n\n\n\nstring\n\n\n\n\n\n\n\n\n\n\nlbs.common.executeVba()\n\n\nExecute VBA code, same as old VBA.run()\n\n\nSyntax\n\n\nlbs.common.executeVba(proc,params)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nproc\n\n\nstring\n\n\n\n\n\n\nparams\n\n\nstring\n\n\n\n\n\n\n###### Return\n\n\n\n\n\n\n\n\nstring\n\n\n\n\n\n\n\n\n\n\nlbs.common.nl2br\n\n\nreplace nl chars with html rowbreaks\n\n\nSyntax\n\n\nlbs.common.nl2br(data)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\ndata\n\n\nstring\n\n\n\n\n\n\n##### Return\n\n\n\n\n\n\n\n\nstring\n\n\n\n\n\n\n\n\n\n\nstring.format()\n\n\nImplementation of c# String.Format()\n\n\nSyntax\n\n\nstring.format(format,var1,[var2])\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nformat\n\n\nstring\n\n\n\n\n\n\nvar\n\n\nreplacement varibles\n\n\n\n\n\n\n##### Return\n\n\n\n\n\n\n\n\nstring\n\n\n\n\n\n\n\n\n\n\nlbs.log.debug\n\n\nLog message at debug level\n\n\nSyntax\n\n\nlbs.log.debug(msg)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nmsg\n\n\nmessage\n\n\n\n\n\n\n\n\nlbs.log.debug\n\n\nLog message at info level\n\n\nSyntax\n\n\nlbs.log.info(msg)\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nmsg\n\n\nmessage\n\n\n\n\n\n\n\n\nlbs.log.warn\n\n\nLog message at warn level\n\n\nSyntax\n\n\nlbs.log.warn(msg, [e])\n\n\nParameters\n\n\n\n\n\n\n\n\nParameters\n\n\nType\n\n\n\n\n\n\n\n\n\n\nmsg\n\n\nmessage\n\n\n\n\n\n\ne\n\n\nExecption (optional)\n\n\n\n\n\n\n\n\nlbs.log.error\n\n\nLog message at error level\n\n\nSyntax\n\n\nlbs.log.error(msg, [e])\n\n\nParameters\n\n\n|Parameters|Type|\n|---|---|---|\n|msg|message|\n|e|Execption (optional)|",
+            "title": "Custom components Apps"
+        },
+        {
+            "location": "/custom_components/#building-apps",
+            "text": "",
+            "title": "Building apps"
+        },
+        {
+            "location": "/custom_components/#basics",
+            "text": "Apps are small standalone tools, used for customer customisations. They are loaded dynamically and added only through a single line of HTML in the Actionpad. The business logic and dataconnection is allways performed by the VBA. This functionallity should be inside a single module.   The general idea of an app is to implement:   A function or procedure to deliver data. VBA or SQL, can deliver data as xml, record or records.  A view - An html template with the structure of your app.  A view-model - the viewmodel holds a rednering and frontend logic   An app is initilaized as:\n1. The app is loaded and the config of the app is parsed\n2. Data is loaded from LIME Pro, from your supplied function\n3. The data is converted to a view-model (In this case the view model is just a JSON represenation of the data)\n4. Additional resources are loaded to the app\n5. The view-model is supplied to the app and cam be modified\n6. The app view is loaded from app.html.\n7. The view and view-model is rendered and injected to the actionpad   Initiation of an app is executed by the  lbs.apploader.js  module and triggered by an  data-app: -attribute.  The data can be provided as XML, record or records and limebootstrap will then supply the app with an View-model based on the data, free for you to work with. In the view model you will also find all translations and avilable data from the current actionpad viewmodel.     < div   data-app = \"{app:'checklist',config:{canBeUnchecked:true,allowRemove:true, canAddTask:true}} \"   ></ div >   Please note that you can not have a  data-app  and  data-bind  attribute in the same element",
+            "title": "Basics"
+        },
+        {
+            "location": "/custom_components/#the-javascript-app-structure",
+            "text": "lbs . apploader . register ( 'template' ,   function   ()   {   //Insert name of app here \n     var   self   =   this ; \n\n     //config \n     this . config   =   { \n         dataSources :   [   //Either provide your data source here, or let the user of your app supplie it \n\n         ], \n         resources :   {   //Add any extra resources that should be loadad. The paths are realtive your app folder, exept libs which are loaded from system/js/ \n             scripts :   [], \n             styles :   [ 'app.css' ], \n             libs :   [ 'json2xml.js' ] \n         } \n     }, \n\n     //initialize \n     this . initialize   =   function   ( node ,   viewModel )   { \n\n         //Use this method to setup you app.  \n         // \n         //The data you requested along with activeInspector are delivered in the variable viewModel. \n         //You may make any modifications you please to it or replace is with a entirely new one before returning it. \n         //The returned viewmodel will be used to build your app. \n\n\n         return   viewModel ; \n     }",
+            "title": "The javascript app structure"
+        },
+        {
+            "location": "/custom_components/#object-definitions",
+            "text": "",
+            "title": "Object definitions"
+        },
+        {
+            "location": "/custom_components/#datasouce",
+            "text": "{type: '', source: '', alias:''}",
+            "title": "DataSouce"
+        },
+        {
+            "location": "/custom_components/#limeversion",
+            "text": "Parameter  Type  Comment      comparable  int     full  string     major  int     minor  int     build  int",
+            "title": "LimeVersion"
+        },
+        {
+            "location": "/custom_components/#library-attributes",
+            "text": "Parameter  Type  Comment      lbs.debug  int  if debug modes has been triggered    lbs.limeVersion  LimeVersion     lbs.limeDataConnection  object  reference to window.external    lbs.hasLimeConnection  boolean  has reference to lime?    lbs.activeClass  string     lbs.activeDatabase  string     lbs.activeServer  string     lbs.common.iconTemplate  string  template for icon html",
+            "title": "Library attributes"
+        },
+        {
+            "location": "/custom_components/#library-helper-functions",
+            "text": "",
+            "title": "Library helper functions"
+        },
+        {
+            "location": "/custom_components/#lbsheperloaddatasorces",
+            "text": "Loads multiple datasources into a JSON objekt",
+            "title": "lbs.heper.loadDataSorces()"
+        },
+        {
+            "location": "/custom_components/#syntax",
+            "text": "lbs.heper.loadDataSorces(viewModel, DataSources, [override])",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters",
+            "text": "Parameters  Type  Comment      viewModel  array  object to assign values to    DataSources  Array  sources    Override  boolean  if duplicate values should be overriden or thrown away",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbsheperloaddatasorce",
+            "text": "Loads a datasources into a JSON objekt",
+            "title": "lbs.heper.loadDataSorce()"
+        },
+        {
+            "location": "/custom_components/#syntax_1",
+            "text": "lbs.heper.loadDataSorce(viewModel, DataSource, [override])",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_1",
+            "text": "Parameters  Type  Comment      viewModel  array  object to assign values to    DataSource  DataSouce  source    Override  boolean  if duplicate values should be overriden or thrown away",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbscommongeterrortext",
+            "text": "Returnes a funny error adjective :)",
+            "title": "lbs.common.getErrorText()"
+        },
+        {
+            "location": "/custom_components/#syntax_2",
+            "text": "lbs.common.getErrorText()",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#return",
+            "text": "string",
+            "title": "Return"
+        },
+        {
+            "location": "/custom_components/#lbscommonescapehtml",
+            "text": "Escape html",
+            "title": "lbs.common.escapeHtml()"
+        },
+        {
+            "location": "/custom_components/#syntax_3",
+            "text": "lbs.common.escapeHtml(html)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_2",
+            "text": "Parameters  Type      html  string    ###### Return     string",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbscommoncreatelimelink",
+            "text": "Create limelink",
+            "title": "lbs.common.createLimeLink()"
+        },
+        {
+            "location": "/custom_components/#syntax_4",
+            "text": "lbs.common.createLimeLink(class,id)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_3",
+            "text": "Parameters  Type      class  string    id  int    ###### Return     string",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbscommongeturlparameter",
+            "text": "Extract URL parameter from GET variable",
+            "title": "lbs.common.getURLParameter()"
+        },
+        {
+            "location": "/custom_components/#syntax_5",
+            "text": "lbs.common.getURLParameter(name)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_4",
+            "text": "Parameters  Type      name  string    ###### Return     string",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbscommonexecutevba",
+            "text": "Execute VBA code, same as old VBA.run()",
+            "title": "lbs.common.executeVba()"
+        },
+        {
+            "location": "/custom_components/#syntax_6",
+            "text": "lbs.common.executeVba(proc,params)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_5",
+            "text": "Parameters  Type      proc  string    params  string    ###### Return     string",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbscommonnl2br",
+            "text": "replace nl chars with html rowbreaks",
+            "title": "lbs.common.nl2br"
+        },
+        {
+            "location": "/custom_components/#syntax_7",
+            "text": "lbs.common.nl2br(data)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_6",
+            "text": "Parameters  Type      data  string    ##### Return     string",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#stringformat",
+            "text": "Implementation of c# String.Format()",
+            "title": "string.format()"
+        },
+        {
+            "location": "/custom_components/#syntax_8",
+            "text": "string.format(format,var1,[var2])",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_7",
+            "text": "Parameters  Type      format  string    var  replacement varibles    ##### Return     string",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbslogdebug",
+            "text": "Log message at debug level",
+            "title": "lbs.log.debug"
+        },
+        {
+            "location": "/custom_components/#syntax_9",
+            "text": "lbs.log.debug(msg)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_8",
+            "text": "Parameters  Type      msg  message",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbslogdebug_1",
+            "text": "Log message at info level",
+            "title": "lbs.log.debug"
+        },
+        {
+            "location": "/custom_components/#syntax_10",
+            "text": "lbs.log.info(msg)",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_9",
+            "text": "Parameters  Type      msg  message",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbslogwarn",
+            "text": "Log message at warn level",
+            "title": "lbs.log.warn"
+        },
+        {
+            "location": "/custom_components/#syntax_11",
+            "text": "lbs.log.warn(msg, [e])",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_10",
+            "text": "Parameters  Type      msg  message    e  Execption (optional)",
+            "title": "Parameters"
+        },
+        {
+            "location": "/custom_components/#lbslogerror",
+            "text": "Log message at error level",
+            "title": "lbs.log.error"
+        },
+        {
+            "location": "/custom_components/#syntax_12",
+            "text": "lbs.log.error(msg, [e])",
+            "title": "Syntax"
+        },
+        {
+            "location": "/custom_components/#parameters_11",
+            "text": "|Parameters|Type|\n|---|---|---|\n|msg|message|\n|e|Execption (optional)|",
+            "title": "Parameters"
+        },
+        {
+            "location": "/advanced/",
+            "text": "Advanced\n\n\nHow does it work?\n\n\nThe new Actionpads are inspired of how a single page application work. Views (basically html-templates) and data(usually JSON) are loaded via AJAX (an asyncrounous javacript call) by the the web application. The template is then rendered by applying the data and the result is shown to the user.\n\n\nIn LIME-bootstraps case lbs.html and lbs.js constitute the main application and all Actionpads set to show \nlbs.html\n. For simplification we'll call the framework just \nLBS\n (LIME Bootstrap). \nlbs.html\n contians all included CSS, JS and meta tags. The Actionpads (for example company.html) are now just views, containing no included CSS or JS.\n\n\nlbs.html will detemine which view to load either by a supplied query string (the thing after the questionmark), \n../lbs.html?ap=company\n or if nothing is supplied, by trying to load a view with the same name as the class of the LIME inspector.\n\n\nThe active inspectors record is then loaded as data and converted to JSON.\n\n\nBasic flow in LBS:\n\n\n\n\n\n\nLBS starts and includes all base CSS, Javascript and sets a lot of environment variables, such as skin color, language.\n\n\n\n\n\n\nLBS then checks where you want your display your HTML-view. In LIME you can show HTML in the Actionpad, in a field, in a tab or in a web dialog. If you don't specify anything lbs will assume your building an Actionpad.\n\n\n\n\n\n\nThe specified view, html-file, is loaded\n\n\n\n\n\n\nData is loaded. LBS will first check \n_config.js\n for datasources, specified with the name of the view. If no datasources are found LBS will try to load the data from the \nActiveInspector\n. A dictionary of local languages translations is loaded. All data is supplied as a JSON-object and then converted to a knockout viewmodel-\n\n\n\n\n\n\nApps are discovered, started and their data is loaded into the main viewmodel. A app can specify depencies on other libraries or styles. These are dynamically loaded and checked for duplicates.\n\n\n\n\n\n\nThe viewmodel is applied to the now complete view and rendered.\n\n\n\n\n\n\nLoading views\n\n\nAs metioned lbs.html is the real engine and all HTML things should be loaded trough lbs.html. This is achieved by supplying a query string\n\n\n[URL to Actionpad folder]/lbs.html?ap=[path to your view/view name]\n\n\nThe path is relative the lbs.html file and you should not include the file extension (.html).\n\n\nLoading the company Actionpad (company.html):\n\n\nlbs.html?ap=company\n\n\nThe console and debugging your applications\n\n\nThe framework has been blessed with a virtual console, to use for debugging. It is activated through changing \ndebug: true,\n in \n_config.js\n. The console will allways automagically appeare if a critical error is logged. If you make syntacic errors in the wrong place, even the viritual console will crash. You can easily use the console when building apps, read more abot this in the app readme. The console is limited to 30 messages by default.\n\n\nWhen working with more advanced stuff you might like to have access to a real console. Modern browsers won't allow dynamically loadings scripts from the local file system, due to security concerns. Dynamically loading scripts and html views are core concepts in LBS. In LIME a small VBA function acts as the loader. However in \nsystem/bin/\n you will find a \n.bat-file\n which will restart Google Chrome in a debug mode, allowing you to inspect the CSS and JS. If you dislike this approach a small HTTP-server will do the trick. With Python3 just go to the actionpad folder and write this in your terminal:\n\n\n$python\n -m http.server\n\n\n\n\n\nDifferent wrappers\n\n\nIn LIME HTML can be displayed in the actionpad, in a HTML-field, in a HTML-tab and in a HTML-dialog. Theses places are quite different and requires some basic setup to work well. Your view can thus be loaded into three different wrappers for helping you with the different conditions.\n\n\nThe three basic wrappers of content:\n\n\n\n\nActionpad-wrapper\n. A thin and long wrapper with a slightly lighter background images with a sharp edge to teh rest of the content:\n\n\nInline-wrapper\n. Used for HTML-fields. Completely plain, with the same color as the Inspector and no padding or margin. Built to seamlessly look as a part of the inspector.\n\n\nTab-wrapper\n. Used for wider layouts, such as a tab or a dialog. Uses default Twitter Bootstrap margins and is fully responsive.\n\n\n\n\nThe Actionpad wrapper is allways used unless anything else is stated. Pick your wrapper by suppling a querystring to lbs.html\n\n\n__Inline:\n \nlbs.html?type=inline\n\n\n_Tab:\n \nlbs.html?type=tab\n\n\nWhen working with tabs, fields or dialogs it is easiest to use VBA to set the URL. Example:\n\n\n    ActiveInspector.Controls.SetValue(\"htmlfield\", WebFolder & \"lbs.html?ap=foo&type=inline\")\n\n\n\n\n\nSettings and loading more data - _config.js\n\n\nFor loading additional data or enabling the debug mode you have a file called \n_config.js\n.\n\n\nExample:\n\n\n/**\n\n\nEnable or disable the debug console\n\n\nfor the whole application\n\n\n**/\n\n\nlbs\n.\nsetDebug\n(\ntrue\n);\n\n\n\n/**\n\n\nConfigure special use cases,\n\n\nmainly when requiring additional data sources\n\n\n**/\n\n\n\nlbs\n.\nconfigure\n({\n\n    \n'index'\n \n:\n \n{\n \n// <-- name of view\n\n        \ndataSources\n:\n \n[\n\n             \n{\n \ntype\n:\n \n'localization'\n,\n \nsource\n:\n \n''\n \n},\n\n        \n],\n\n        \nautorefresh\n \n:\n \nfalse\n\n    \n}\n\n\n})\n\n\n\n\n\n\nLogic in bindnings\n\n\nKnockout lets you write JavaScript expressions directly in the bindnings. This is a really simple and powerful way of doing cool stuff. Word of advice: Too much logic in the view isn't nice at all. If you need to do a little more advanced stuff, build an app!\n\n\nExample:\n\n\n<\ndiv\n \nclass\n=\n\"alert alert-warning fullwidth\"\n \ndata-bind\n=\n\"\n\n\n    visible: todo.endtime.value !== null && (moment(todo.endtime.value) < moment() && todo.done.value != 1),\n\n\n    text: 'Uppgiften \u00e4r ' + (todo.endtime.value != null ? moment(todo.endtime.value).fromNow(true) : '' )+ ' f\u00f6rsenad!',\n\n\n    icon:'fa-bell'\"\n \n>\n\n\n</\ndiv\n>\n\n\n\n\n\n\nPlease note that you can put the bindings on separate rows to increase readability\n\n\nCookies\n\n\nCookies are used to store values from the actionpads and apps. Every cookie is locally stored in the actionpad folder and is unique for every computer and database (not user). There are two methods that you can use to handle a cookie:\n\n\nGet cookie\n\n\nTo get the value in a cookie use the method lbs.bakery.getCookie(name)\n\n\nvar\n \nmycookievalue\n \n=\n \nlbs\n.\nbakery\n.\ngetCookie\n(\n\u201c\ngingerbread\n\u201d\n)\n\n\n\n\n\n\nSet Cookie\n\n\nTo set a cookie just call the function lbs.bakery.setCookie(name,value,days). See example below.\n\n\nlbs\n.\nbakery\n.\nsetCookie\n(\n\u201c\ngingerbread\n\u201d\n,\nmycookievalue\n,\n3\n)\n\n\n\n\n\n\nIncluded javascript frameworks\n\n\nThe bundled library contains:\n\n\n\n\njQuery\n\n\nUnderscore.js\n\n\nMoment.js\n\n\nKnockout.js\n\n\nBootstrap.js\n\n\n\n\nIcons\n\n\nFont awesome\n is include. Please see the font awesome documentation.",
+            "title": "Advanced"
+        },
+        {
+            "location": "/advanced/#advanced",
+            "text": "",
+            "title": "Advanced"
+        },
+        {
+            "location": "/advanced/#how-does-it-work",
+            "text": "The new Actionpads are inspired of how a single page application work. Views (basically html-templates) and data(usually JSON) are loaded via AJAX (an asyncrounous javacript call) by the the web application. The template is then rendered by applying the data and the result is shown to the user.  In LIME-bootstraps case lbs.html and lbs.js constitute the main application and all Actionpads set to show  lbs.html . For simplification we'll call the framework just  LBS  (LIME Bootstrap).  lbs.html  contians all included CSS, JS and meta tags. The Actionpads (for example company.html) are now just views, containing no included CSS or JS.  lbs.html will detemine which view to load either by a supplied query string (the thing after the questionmark),  ../lbs.html?ap=company  or if nothing is supplied, by trying to load a view with the same name as the class of the LIME inspector.  The active inspectors record is then loaded as data and converted to JSON.  Basic flow in LBS:    LBS starts and includes all base CSS, Javascript and sets a lot of environment variables, such as skin color, language.    LBS then checks where you want your display your HTML-view. In LIME you can show HTML in the Actionpad, in a field, in a tab or in a web dialog. If you don't specify anything lbs will assume your building an Actionpad.    The specified view, html-file, is loaded    Data is loaded. LBS will first check  _config.js  for datasources, specified with the name of the view. If no datasources are found LBS will try to load the data from the  ActiveInspector . A dictionary of local languages translations is loaded. All data is supplied as a JSON-object and then converted to a knockout viewmodel-    Apps are discovered, started and their data is loaded into the main viewmodel. A app can specify depencies on other libraries or styles. These are dynamically loaded and checked for duplicates.    The viewmodel is applied to the now complete view and rendered.",
+            "title": "How does it work?"
+        },
+        {
+            "location": "/advanced/#loading-views",
+            "text": "As metioned lbs.html is the real engine and all HTML things should be loaded trough lbs.html. This is achieved by supplying a query string  [URL to Actionpad folder]/lbs.html?ap=[path to your view/view name]  The path is relative the lbs.html file and you should not include the file extension (.html).  Loading the company Actionpad (company.html):  lbs.html?ap=company",
+            "title": "Loading views"
+        },
+        {
+            "location": "/advanced/#the-console-and-debugging-your-applications",
+            "text": "The framework has been blessed with a virtual console, to use for debugging. It is activated through changing  debug: true,  in  _config.js . The console will allways automagically appeare if a critical error is logged. If you make syntacic errors in the wrong place, even the viritual console will crash. You can easily use the console when building apps, read more abot this in the app readme. The console is limited to 30 messages by default.  When working with more advanced stuff you might like to have access to a real console. Modern browsers won't allow dynamically loadings scripts from the local file system, due to security concerns. Dynamically loading scripts and html views are core concepts in LBS. In LIME a small VBA function acts as the loader. However in  system/bin/  you will find a  .bat-file  which will restart Google Chrome in a debug mode, allowing you to inspect the CSS and JS. If you dislike this approach a small HTTP-server will do the trick. With Python3 just go to the actionpad folder and write this in your terminal:  $python  -m http.server",
+            "title": "The console and debugging your applications"
+        },
+        {
+            "location": "/advanced/#different-wrappers",
+            "text": "In LIME HTML can be displayed in the actionpad, in a HTML-field, in a HTML-tab and in a HTML-dialog. Theses places are quite different and requires some basic setup to work well. Your view can thus be loaded into three different wrappers for helping you with the different conditions.  The three basic wrappers of content:   Actionpad-wrapper . A thin and long wrapper with a slightly lighter background images with a sharp edge to teh rest of the content:  Inline-wrapper . Used for HTML-fields. Completely plain, with the same color as the Inspector and no padding or margin. Built to seamlessly look as a part of the inspector.  Tab-wrapper . Used for wider layouts, such as a tab or a dialog. Uses default Twitter Bootstrap margins and is fully responsive.   The Actionpad wrapper is allways used unless anything else is stated. Pick your wrapper by suppling a querystring to lbs.html  __Inline:   lbs.html?type=inline  _Tab:   lbs.html?type=tab  When working with tabs, fields or dialogs it is easiest to use VBA to set the URL. Example:      ActiveInspector.Controls.SetValue(\"htmlfield\", WebFolder & \"lbs.html?ap=foo&type=inline\")",
+            "title": "Different wrappers"
+        },
+        {
+            "location": "/advanced/#settings-and-loading-more-data-_configjs",
+            "text": "For loading additional data or enabling the debug mode you have a file called  _config.js .  Example:  /**  Enable or disable the debug console  for the whole application  **/  lbs . setDebug ( true );  /**  Configure special use cases,  mainly when requiring additional data sources  **/  lbs . configure ({ \n     'index'   :   {   // <-- name of view \n         dataSources :   [ \n              {   type :   'localization' ,   source :   ''   }, \n         ], \n         autorefresh   :   false \n     }  })",
+            "title": "Settings and loading more data - _config.js"
+        },
+        {
+            "location": "/advanced/#logic-in-bindnings",
+            "text": "Knockout lets you write JavaScript expressions directly in the bindnings. This is a really simple and powerful way of doing cool stuff. Word of advice: Too much logic in the view isn't nice at all. If you need to do a little more advanced stuff, build an app!  Example:  < div   class = \"alert alert-warning fullwidth\"   data-bind = \"      visible: todo.endtime.value !== null && (moment(todo.endtime.value) < moment() && todo.done.value != 1),      text: 'Uppgiften \u00e4r ' + (todo.endtime.value != null ? moment(todo.endtime.value).fromNow(true) : '' )+ ' f\u00f6rsenad!',      icon:'fa-bell'\"   >  </ div >   Please note that you can put the bindings on separate rows to increase readability",
+            "title": "Logic in bindnings"
+        },
+        {
+            "location": "/advanced/#cookies",
+            "text": "Cookies are used to store values from the actionpads and apps. Every cookie is locally stored in the actionpad folder and is unique for every computer and database (not user). There are two methods that you can use to handle a cookie:",
+            "title": "Cookies"
+        },
+        {
+            "location": "/advanced/#get-cookie",
+            "text": "To get the value in a cookie use the method lbs.bakery.getCookie(name)  var   mycookievalue   =   lbs . bakery . getCookie ( \u201c gingerbread \u201d )",
+            "title": "Get cookie"
+        },
+        {
+            "location": "/advanced/#set-cookie",
+            "text": "To set a cookie just call the function lbs.bakery.setCookie(name,value,days). See example below.  lbs . bakery . setCookie ( \u201c gingerbread \u201d , mycookievalue , 3 )",
+            "title": "Set Cookie"
+        },
+        {
+            "location": "/advanced/#included-javascript-frameworks",
+            "text": "The bundled library contains:   jQuery  Underscore.js  Moment.js  Knockout.js  Bootstrap.js",
+            "title": "Included javascript frameworks"
+        },
+        {
+            "location": "/advanced/#icons",
+            "text": "Font awesome  is include. Please see the font awesome documentation.",
+            "title": "Icons"
+        }
+    ]
+}
