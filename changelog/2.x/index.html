@@ -453,8 +453,22 @@
     2.0.0
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" title="Changes" class="md-nav__link">
+    Changes
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-functionality" title="New functionality" class="md-nav__link">
+    New functionality
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#breaking-changes" title="Breaking changes" class="md-nav__link">
@@ -521,8 +535,22 @@
     2.0.0
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" title="Changes" class="md-nav__link">
+    Changes
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-functionality" title="New functionality" class="md-nav__link">
+    New functionality
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#breaking-changes" title="Breaking changes" class="md-nav__link">
@@ -557,6 +585,27 @@
                 
                 <h1 id="changelog-for-lime-bootstrap-2">Changelog for Lime Bootstrap 2</h1>
 <h2 id="200">2.0.0</h2>
+<p>Lime Bootstrap is a major rewrite of most of Lime Bootstrap. We have moved to a reliable build and packaging and improved tooling. Foundation for new exciting features has been set, such as moving to components and new datasources for the REST-api.</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li>Dependencies are managed with npm</li>
+<li>ES6 is used and transpiled with Bable</li>
+<li>Bundeling is moved from Gulp to Brunch.io</li>
+<li>Tests are added with Jest</li>
+<li>Base views are no longer dynamically loaded</li>
+<li>Docs and website have been modernized</li>
+<li>Old debug view is removed, chromiums debuger is the replacement</li>
+<li>Version checking of apps and framework is removed, versioning through limeplug is the replacement</li>
+<li>Better support for being used inside Chromium</li>
+<li>Moved most dependencies to latest version, exeptions are Bootstrap and Font Awesome</li>
+<li>LBS can be run fully decopled from VBA</li>
+</ul>
+<h3 id="new-functionality">New functionality</h3>
+<ul>
+<li>Added new built in <a href="../../included_components">components</a></li>
+<li>Added new <a href="../../datasources">data sources</a> to use the REST-api and Custom endpoints</li>
+<li>Building apps are replace by building <a href="../../custom_components">custom components</a></li>
+</ul>
 <h3 id="breaking-changes">Breaking changes</h3>
 <ul>
 <li><code>xml2json</code> has been replaced and functions a tiny bit differently. It just takes a string representing a XML-object as its sole parameter</li>

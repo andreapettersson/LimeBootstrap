@@ -647,7 +647,7 @@
         },
         {
             "location": "/changelog/2.x/",
-            "text": "Changelog for Lime Bootstrap 2\n\n\n2.0.0\n\n\nBreaking changes\n\n\n\n\nxml2json\n has been replaced and functions a tiny bit differently. It just takes a string representing a XML-object as its sole parameter\n\n\nloadDataSource\n has been changed to return the result instead of merging of the supplied model, i.e \ndata = loadDataSource(...)",
+            "text": "Changelog for Lime Bootstrap 2\n\n\n2.0.0\n\n\nLime Bootstrap is a major rewrite of most of Lime Bootstrap. We have moved to a reliable build and packaging and improved tooling. Foundation for new exciting features has been set, such as moving to components and new datasources for the REST-api.\n\n\nChanges\n\n\n\n\nDependencies are managed with npm\n\n\nES6 is used and transpiled with Bable\n\n\nBundeling is moved from Gulp to Brunch.io\n\n\nTests are added with Jest\n\n\nBase views are no longer dynamically loaded\n\n\nDocs and website have been modernized\n\n\nOld debug view is removed, chromiums debuger is the replacement\n\n\nVersion checking of apps and framework is removed, versioning through limeplug is the replacement\n\n\nBetter support for being used inside Chromium\n\n\nMoved most dependencies to latest version, exeptions are Bootstrap and Font Awesome\n\n\nLBS can be run fully decopled from VBA\n\n\n\n\nNew functionality\n\n\n\n\nAdded new built in \ncomponents\n\n\nAdded new \ndata sources\n to use the REST-api and Custom endpoints\n\n\nBuilding apps are replace by building \ncustom components\n\n\n\n\nBreaking changes\n\n\n\n\nxml2json\n has been replaced and functions a tiny bit differently. It just takes a string representing a XML-object as its sole parameter\n\n\nloadDataSource\n has been changed to return the result instead of merging of the supplied model, i.e \ndata = loadDataSource(...)",
             "title": "LBS 2"
         },
         {
@@ -657,8 +657,18 @@
         },
         {
             "location": "/changelog/2.x/#200",
-            "text": "",
+            "text": "Lime Bootstrap is a major rewrite of most of Lime Bootstrap. We have moved to a reliable build and packaging and improved tooling. Foundation for new exciting features has been set, such as moving to components and new datasources for the REST-api.",
             "title": "2.0.0"
+        },
+        {
+            "location": "/changelog/2.x/#changes",
+            "text": "Dependencies are managed with npm  ES6 is used and transpiled with Bable  Bundeling is moved from Gulp to Brunch.io  Tests are added with Jest  Base views are no longer dynamically loaded  Docs and website have been modernized  Old debug view is removed, chromiums debuger is the replacement  Version checking of apps and framework is removed, versioning through limeplug is the replacement  Better support for being used inside Chromium  Moved most dependencies to latest version, exeptions are Bootstrap and Font Awesome  LBS can be run fully decopled from VBA",
+            "title": "Changes"
+        },
+        {
+            "location": "/changelog/2.x/#new-functionality",
+            "text": "Added new built in  components  Added new  data sources  to use the REST-api and Custom endpoints  Building apps are replace by building  custom components",
+            "title": "New functionality"
         },
         {
             "location": "/changelog/2.x/#breaking-changes",
