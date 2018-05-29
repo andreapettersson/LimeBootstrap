@@ -392,6 +392,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#components" title="Components" class="md-nav__link">
     Components
   </a>
@@ -399,49 +406,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-and-apps" title="Functions and Apps" class="md-nav__link">
-    Functions and Apps
+  <a href="#custom-components-and-apps" title="Custom Components and Apps" class="md-nav__link">
+    Custom Components and Apps
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bindings-and-filters" title="Bindings and filters" class="md-nav__link">
-    Bindings and filters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#knockout-bindings" title="Knockout bindings" class="md-nav__link">
-    Knockout bindings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-bindings" title="Custom bindings" class="md-nav__link">
-    Custom bindings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filters" title="Filters" class="md-nav__link">
-    Filters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-handling-multiple-languages" title="Translation: Handling multiple languages" class="md-nav__link">
-    Translation: Handling multiple languages
+  <a href="#translation" title="Translation" class="md-nav__link">
+    Translation
   </a>
   
     <nav class="md-nav">
@@ -468,28 +441,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#going-beyond-the-activeinspector-loading-additional-data" title="Going beyond the ActiveInspector - Loading additional data" class="md-nav__link">
-    Going beyond the ActiveInspector - Loading additional data
+  <a href="#loading-additional-data" title="Loading additional data" class="md-nav__link">
+    Loading additional data
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-time-and-dates" title="Working with time and dates" class="md-nav__link">
-    Working with time and dates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-logwatch" title="The log/watch" class="md-nav__link">
-    The log/watch
-  </a>
   
 </li>
       
@@ -672,6 +631,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#components" title="Components" class="md-nav__link">
     Components
   </a>
@@ -679,49 +645,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#functions-and-apps" title="Functions and Apps" class="md-nav__link">
-    Functions and Apps
+  <a href="#custom-components-and-apps" title="Custom Components and Apps" class="md-nav__link">
+    Custom Components and Apps
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bindings-and-filters" title="Bindings and filters" class="md-nav__link">
-    Bindings and filters
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#knockout-bindings" title="Knockout bindings" class="md-nav__link">
-    Knockout bindings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-bindings" title="Custom bindings" class="md-nav__link">
-    Custom bindings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filters" title="Filters" class="md-nav__link">
-    Filters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-handling-multiple-languages" title="Translation: Handling multiple languages" class="md-nav__link">
-    Translation: Handling multiple languages
+  <a href="#translation" title="Translation" class="md-nav__link">
+    Translation
   </a>
   
     <nav class="md-nav">
@@ -748,28 +680,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#going-beyond-the-activeinspector-loading-additional-data" title="Going beyond the ActiveInspector - Loading additional data" class="md-nav__link">
-    Going beyond the ActiveInspector - Loading additional data
+  <a href="#loading-additional-data" title="Loading additional data" class="md-nav__link">
+    Loading additional data
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-time-and-dates" title="Working with time and dates" class="md-nav__link">
-    Working with time and dates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-logwatch" title="The log/watch" class="md-nav__link">
-    The log/watch
-  </a>
   
 </li>
       
@@ -823,21 +741,57 @@
 <p>An ActionPad built with Lime Bootstrap has two main components; a <code>View</code> and a <code>ViewModel</code>. Lime Bootstrap uses <a href="http://knockoutjs.com">knockoutjs</a> <a href="https://en.wikipedia.org/wiki/Model–view–viewmodel">Model-View-ViewModel (MVVM)</a> pattern.</p>
 <h3 id="the-view">The view</h3>
 <p>The view is a piece of HTML which descripes where elements should be placed. In the view we <code>bind</code> the data and functions of the <code>ViewModel</code> to the view. Each ActionPad has an unique view, which is a partial html-file with the same name as the LimeType it is used with, for example `company.html``</p>
-<p>In the <code>view</code>we make heavy use of <code>components</code>, or specialized html elements, for example <code>&lt;lbs-hero&gt;</code>. We are using <a href="http://knockoutjs.com/documentation/component-overview.html">knockout components</a> behind the scenes to create the components, but in essens it is very inspired of the emerging webstandard of web components. Several components are <a href="../included_components">included</a> but you have also the ability to <a href="../custom_components">build your own components</a> or download community components from the <a href="https://appstore.lime-bootstrap.com">AppStore</a></p>
+<p>In the <code>view</code>we make heavy use of <code>components</code></p>
 <h3 id="the-viewmodel">The ViewModel</h3>
+<p>The ViewModel is a Javascript object containing your data and functions to interact with the View. You don't have any direct access to the ViewModel when building ActionPads. For direct access to a ViewModel you need to create a <a href="../custom_components">Custom Components</a>. You have some indirect access to the ViewModel of an ActionPad through specifing which <a href="../datasources">data sources</a> should be used in the file <code>_config.js</code>.</p>
+<h2 id="configuration">Configuration</h2>
+<p>All framework configuration is done in the file <code>_config.js</code>. Here you can load additional data, enabling the debug mode or load custom components.</p>
+<div class="codehilite"><pre><span></span><span class="nx">lbs</span><span class="p">.</span><span class="nx">externalConfig</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Enable or disable the debug-logging</span>
+<span class="cm">    */</span>
+    <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Verbose levels:</span>
+<span class="cm">        debug   :   Shows all log levels</span>
+<span class="cm">        info    :   Shows information level and up</span>
+<span class="cm">        warn    :   Shows warning level and up</span>
+<span class="cm">        error   :   Shows only error level logs</span>
+<span class="cm">    */</span>
+    <span class="nx">verboseLevel</span><span class="o">:</span> <span class="s1">&#39;warn&#39;</span><span class="p">,</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Load custom components</span>
+<span class="cm">    */</span>
+    <span class="nx">components</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;my-component&#39;</span><span class="p">,</span> <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;components/my-comp/my-comp.js&#39;</span> <span class="p">}</span>
+    <span class="p">]</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Datasources to be used for each view</span>
+<span class="cm">    */</span>
+    <span class="nx">config</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">helpdesk</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">dataSources</span><span class="o">:</span> <span class="p">[</span>
+                <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;activeLimeObject&#39;</span><span class="p">,</span> <span class="nx">embed</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">]</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;translation&#39;</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;relatedLimeObjects&#39;</span><span class="p">,</span> <span class="nx">limetype</span><span class="o">:</span> <span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;person&#39;</span> <span class="p">},</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <h2 id="components">Components</h2>
-<p>Lime bootstrap supports all Twitter bootstrap elements but has also a few special elements. Please see the <a href="http://getbootstrap.com/components/">Twitter bootstrap</a> documentation for all cool stuff you have access to.</p>
-<p>We also supply the following components:</p>
-<ul>
-<li><strong>Menu:</strong> - <em>A menu to hold actions</em></li>
-<li><strong>Dropdown button:</strong> - <em>A dropdown button styled for Lime Pro</em></li>
-<li><strong>Header section:</strong> - <em>The top section of every actionpad</em></li>
-<li><strong>Data carousel:</strong> - <em>A rotating object to hold more objects</em></li>
-</ul>
+<p>Components are self contained specialized html elements, for example <code>&lt;lbs-hero&gt;</code>. We are using <a href="http://knockoutjs.com/documentation/component-overview.html">knockout components</a> behind the scenes to create the components, but in essens it is very inspired of the emerging webstandard of web components. Several components are <a href="../included_components">included</a> but you have also the ability to <a href="../custom_components">build your own components</a> or download community components from the <a href="https://appstore.lime-bootstrap.com">AppStore</a></p>
 <p>See all our components <a href="../en/latest/components">here</a></p>
-<h2 id="functions-and-apps">Functions and Apps</h2>
-<p>All Twitter bootstrap functions are included, please see the <a href="http://getbootstrap.com/javascript/">Twitter bootstrap documentation</a>
-Lime Bootstraps allows you to load small components we call apps, as a compliment to Twitter Bootstraps components. Apps can be found <a href="http://limebootstrap.lundalogik.com/web/appstore/index.html">here</a></p>
+<h2 id="custom-components-and-apps">Custom Components and Apps</h2>
+<p>Lime Bootstraps allows you to create and custom components, as a compliment to the included components. Lime Bootstrap 1 had the concept of creating small apps. These apps still run fine in Lime Bootstrap 2.0, but it is prefered to use components.</p>
+<p>Components and Apps can be found <a href="http://limebootstrap.lundalogik.com/web/appstore/index.html">here</a></p>
+<p>A Custom Component is added in <code>_config.js</code> and can then be used in the same way as any included component.</p>
 <p>To start an app add this HTML to your view:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-app</span><span class="o">=</span><span class="s">&quot;{app:&#39;[Name of app]&#39;,</span>
 <span class="s">                config:{</span>
@@ -848,73 +802,7 @@ Lime Bootstraps allows you to load small components we call apps, as a complimen
 
 
 <p>Each app has it's own instructions how to start and install them. Some apps require VBA and/or stored procedures to be added.</p>
-<h2 id="bindings-and-filters">Bindings and filters</h2>
-<p>As we relay heavily on knockout their <code>data-bind=""</code> syntax is used through out the framework. The <code>data-bind=""</code> syntax is a used as a property on an html element. In a <code>data-bind</code> you add <code>bindings</code>, actions or triggers, to perform actions. All Knockout bindings are available, but also a few custom bindings to make your life easier.
-Read more about bindings and Knockout <a href="http://knockoutjs.com/documentation/introduction.html">here</a> and try the tutorial <a href="http://learn.knockoutjs.com">here</a></p>
-<p>A basic example of use of a knockout binding:</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:company.name&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</pre></div>
-
-
-<p>You can also use a short hand for bindnings, using brackets. The above example can also be written as</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{company.name}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</pre></div>
-
-
-<p>You can read more about this short hand syntax <a href="https://mbest.github.io/knockout.punches/">here</a></p>
-<p>As default you only have access to the data of the ActiveInspector!</p>
-<h3 id="knockout-bindings">Knockout bindings</h3>
-<p>Knockout supplies a large set of bindings, which all can be found <a href="http://knockoutjs.com/documentation/introduction.html">here</a>
-Our full documentation can be found <a href="../en/latest/bindingsAndFilters/">here</a></p>
-<p>Some of the more common and useful bindings</p>
-<ul>
-<li><strong>visible:</strong> - <em>hides or shows a html element based on an boolean expression</em></li>
-<li><strong>text:</strong> - <em>Displays a variable as text</em></li>
-<li><strong>html:</strong> - <em>Prepends the supplied font awesome icon to the html element</em></li>
-<li><strong>css:</strong> - <em>Add or remove CSS classes</em></li>
-<li><strong>style:</strong> - <em>Add styling attributes</em></li>
-<li><strong>attr</strong> - <em>Set value of any html attribute</em></li>
-<li><strong>foreach:</strong> - <em>Loop through an array</em></li>
-</ul>
-<h3 id="custom-bindings">Custom bindings</h3>
-<p>To make your life easier we have implemented a few custom bindnings.
-List of custom handlers:</p>
-<ul>
-<li><strong>call:</strong> - <em>Tries to call the provided phone number</em></li>
-<li><strong>email:</strong> - <em>Tries to email the provided address</em></li>
-<li><strong>icon:</strong> - <em>Prepends the supplied font awesome icon to the html element</em></li>
-<li><strong>limeLink:</strong> - <em>Creates an Lime link from a provided relationship field, for example person.company</em></li>
-<li><strong>openURL:</strong> - <em>Opens the supplied URL in a external browser</em></li>
-<li><strong>showOnMap:</strong> - <em>Opens Google Maps with the supplied data as a search query</em></li>
-<li><strong>vba:</strong> - <em>Provide an string of an VBA function with it's parameters separated by commas</em></li>
-<li><strong>vbaVisible:</strong> - <em>Extends knockouts 'visible:' by executing the supplied Boolean VBA function</em></li>
-<li><strong>appInvoke:</strong> - <em>Invokes an old-style actionpad app like textfileimport or duplicatemerge</em></li>
-<li><strong>popover:</strong> - <em>Displays a popover</em></li>
-<li><strong>tooltip:</strong> - <em>Displays a bootstrap tooltip</em></li>
-</ul>
-<h3 id="filters">Filters</h3>
-<p>Filters are a smart and easy way to format your data in a binding
-A filter is a function transforming your binding data and outputting a formated version of it.</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:deal.value | currency: SEK&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{deal.value | currency: SEK}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</pre></div>
-
-
-<p>This will produce a nicely formated value of a deal, example: "10 000SEK"</p>
-<p>List of filters:</p>
-<ul>
-<li><strong>default:<defaultValue></strong> - If the value is blank, null, or an empty array, replace it with the given default value.</li>
-<li><strong>fit:<length>[:<replacement>][:<where>]</strong> - Trim the value if it’s longer than the given length. The trimmed portion is replaced with ... or the replacement value, if given. By default, the value is trimmed on the right but can be changed to left or middle through the where option. For example: name | fit:10::'middle' will convert Shakespeare to Shak...are.</li>
-<li><strong>json[:space]</strong> - Convert the value to a JSON string using ko.toJSON. You can give a space value to format the JSON output.</li>
-<li><strong>lowercase</strong> - Convert the value to lowercase.</li>
-<li><strong>number:<numberOfDecimals></strong> - Rounds a number of desired number of decimals</li>
-<li><strong>replace:<search>:<replace></strong> - Perform a search and replace on the value using String#replace.</li>
-<li><strong>uppercase</strong> - Convert the value to uppercase.</li>
-<li><strong>currency:<currencyName>:<divider></strong> - Formats a number with to a currency with a space a separate every <divider> number. Default 1000</li>
-<li><strong>percent:</strong> - Formats a decimal number as percent 0,01 &gt; 1%</li>
-<li><strong>fromNow:</strong> - Formats a date as a human readable text as for how long ago the date was. Example 2000-01-01 &gt; "Over ten years ago"</li>
-</ul>
-<h2 id="translation-handling-multiple-languages">Translation: Handling multiple languages</h2>
+<h2 id="translation">Translation</h2>
 <p>All available translations from the Localization table are automatically available in the actionpad context. The same language as the logged in user uses is automatically used. The translations are cached in a dictionary to increase speed, but requires you to run <code>ThisApplication.Setup</code> to rebuild the dictionary if you add translations or make changes.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:localize.ActionPad_Todo.addTodo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
@@ -925,7 +813,7 @@ A filter is a function transforming your binding data and outputting a formated 
 </pre></div>
 
 
-<h3 id="technical-notes">Technical notes</h3>
+<h4 id="technical-notes">Technical notes</h4>
 <p>The translations are added to the global view model and are thus available in your apps.</p>
 <p>Note that it is not possible to use localization in the standard way, e.g., <code>localize.Actionpad_Person.t_newcomment</code> within a block where you are using the knockout binding <code>with</code>.</p>
 <h2 id="fetching-data-from-fields-in-lime-crm">Fetching data from fields in Lime CRM</h2>
@@ -945,10 +833,11 @@ A filter is a function transforming your binding data and outputting a formated 
 </pre></div>
 
 
-<h3 id="going-beyond-the-activeinspector-loading-additional-data">Going beyond the ActiveInspector - Loading additional data</h3>
+<h3 id="loading-additional-data">Loading additional data</h3>
 <p>It is common to use data from more than the ActiveInspector and the following syntax will NOT work <code>&lt;li data-bind="text:person.company.phone.text"&gt;&lt;/li&gt;</code></p>
-<p>Instead you can load additional data by requesting data sources in <code>_config.js</code>. You'll find more information about this in the advanced section.</p>
+<p>Instead you can load additional data by requesting data sources in <code>_config.js</code>.</p>
 <p>The loaded data can then be access by:</p>
+<p>All avialable data sources can be found <a href="../datasources">here</a></p>
 <div class="codehilite"><pre><span></span><span class="c">&lt;!-- Loading person and company info on a helpdesk actionpad--&gt;</span>
 <span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:helpdesk.company.text&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:person.phone.text&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -957,18 +846,6 @@ A filter is a function transforming your binding data and outputting a formated 
 </pre></div>
 
 
-<h2 id="working-with-time-and-dates">Working with time and dates</h2>
-<p>Dates are a hassle, except when you have the awesome library <a href="http://momentjs.com">Moment.js</a>.</p>
-<p>To create a iso-date:
-<code>moment()</code></p>
-<p>To parse almost any date format:
-<code>moment([CRAZY DATE FORMAT])</code></p>
-<p>Moment even makes time and dates readable to people.
-<code>moment().timeAgo(2011-01-01)</code> will give you, "A few years ago"</p>
-<p>Moment is automagically setup to use the same language and date-format as the language of the Lime Client.
-Remember to use it and check out it further!</p>
-<h2 id="the-logwatch">The log/watch</h2>
-<p>Bootstap will give you some debug- and log views to help you out.</p>
 <h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
 <p>The different view can be opened with shortcuts provided the actionpad is in focus.</p>
 <table>
