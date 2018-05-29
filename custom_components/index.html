@@ -40,7 +40,7 @@
     
     
       
-        <title>Custom components Apps - Lime Bootstrap</title>
+        <title>Custom components - Lime Bootstrap</title>
       
     
     
@@ -125,7 +125,7 @@
                 Lime Bootstrap
               </span>
               <span class="md-header-nav__topic">
-                Custom components Apps
+                Custom components
               </span>
             
           
@@ -326,6 +326,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../getting_started/" title="Getting started" class="md-nav__link">
       Getting started
     </a>
@@ -383,11 +395,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Custom components Apps
+        Custom components
       </label>
     
-    <a href="./" title="Custom components Apps" class="md-nav__link md-nav__link--active">
-      Custom components Apps
+    <a href="./" title="Custom components" class="md-nav__link md-nav__link--active">
+      Custom components
     </a>
     
       
@@ -1365,7 +1377,7 @@
                 
                 <h1 id="building-apps">Building apps</h1>
 <h2 id="basics">Basics</h2>
-<p>Apps are small standalone tools, used for customer customisations. They are loaded dynamically and added only through a single line of HTML in the Actionpad. The business logic and dataconnection is allways performed by the VBA. This functionallity should be inside a single module. </p>
+<p>Apps are small standalone tools, used for customer customisations. They are loaded dynamically and added only through a single line of HTML in the Actionpad. The business logic and dataconnection is allways performed by the VBA. This functionallity should be inside a single module.</p>
 <p>The general idea of an app is to implement:</p>
 <ol>
 <li>A function or procedure to deliver data. VBA or SQL, can deliver data as xml, record or records.</li>
@@ -1374,14 +1386,14 @@
 </ol>
 <p>An app is initilaized as:
 1. The app is loaded and the config of the app is parsed
-2. Data is loaded from LIME Pro, from your supplied function
+2. Data is loaded from Lime CRM, from your supplied function
 3. The data is converted to a view-model (In this case the view model is just a JSON represenation of the data)
 4. Additional resources are loaded to the app
 5. The view-model is supplied to the app and cam be modified
 6. The app view is loaded from app.html.
-7. The view and view-model is rendered and injected to the actionpad </p>
+7. The view and view-model is rendered and injected to the actionpad</p>
 <p>Initiation of an app is executed by the <code>lbs.apploader.js</code> module and triggered by an <code>data-app:</code>-attribute.</p>
-<p>The data can be provided as XML, record or records and limebootstrap will then supply the app with an View-model based on the data, free for you to work with. In the view model you will also find all translations and avilable data from the current actionpad viewmodel.   </p>
+<p>The data can be provided as XML, record or records and limebootstrap will then supply the app with an View-model based on the data, free for you to work with. In the view model you will also find all translations and avilable data from the current actionpad viewmodel.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-app</span><span class="o">=</span><span class="s">&quot;{app:&#39;checklist&#39;,config:{canBeUnchecked:true,allowRemove:true, canAddTask:true}} &quot;</span> <span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 
@@ -1406,7 +1418,7 @@
     <span class="c1">//initialize</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">initialize</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">viewModel</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="c1">//Use this method to setup you app. </span>
+        <span class="c1">//Use this method to setup you app.</span>
         <span class="c1">//</span>
         <span class="c1">//The data you requested along with activeInspector are delivered in the variable viewModel.</span>
         <span class="c1">//You may make any modifications you please to it or replace is with a entirely new one before returning it.</span>

@@ -326,6 +326,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../getting_started/" title="Getting started" class="md-nav__link">
       Getting started
     </a>
@@ -405,8 +417,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limelink-go-to-another-lime-record" title="limeLink: Go to another LIME Record" class="md-nav__link">
-    limeLink: Go to another LIME Record
+  <a href="#limelink-go-to-another-lime-record" title="limeLink: Go to another Lime Record" class="md-nav__link">
+    limeLink: Go to another Lime Record
   </a>
   
 </li>
@@ -468,8 +480,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom_components/" title="Custom components Apps" class="md-nav__link">
-      Custom components Apps
+    <a href="../custom_components/" title="Custom components" class="md-nav__link">
+      Custom components
     </a>
   </li>
 
@@ -588,8 +600,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limelink-go-to-another-lime-record" title="limeLink: Go to another LIME Record" class="md-nav__link">
-    limeLink: Go to another LIME Record
+  <a href="#limelink-go-to-another-lime-record" title="limeLink: Go to another Lime Record" class="md-nav__link">
+    limeLink: Go to another Lime Record
   </a>
   
 </li>
@@ -643,7 +655,7 @@
                 
                 <h1 id="bindings">Bindings</h1>
 <h2 id="vbavisible-hiding-or-showing-elements">vbaVisible: Hiding or showing elements</h2>
-<p>It is common that some elements only should be visible for certain users or when specific conditions apply. It can be done in two different ways. Either use the LIME Bootstrap data-binding <code>vbaVisible:</code> or use the knockout binding <code>visible:</code>.</p>
+<p>It is common that some elements only should be visible for certain users or when specific conditions apply. It can be done in two different ways. Either use the Lime Bootstrap data-binding <code>vbaVisible:</code> or use the knockout binding <code>visible:</code>.</p>
 <p>The <code>vbaVisible:</code> is used as follows. A VBA function is called, handling the logic whether the element should be visible or not, returning a boolean.
 <strong>true:</strong> Element is visible
 <strong>false:</strong> Element hidden</p>
@@ -710,9 +722,9 @@
 </pre></div>
 
 
-<h2 id="limelink-go-to-another-lime-record">limeLink: Go to another LIME Record</h2>
+<h2 id="limelink-go-to-another-lime-record">limeLink: Go to another Lime Record</h2>
 <ul>
-<li><strong>limeLink</strong> - Tries to create an LIME link to the object provided, please note that the root node of the object is used and not a specific property.</li>
+<li><strong>limeLink</strong> - Tries to create an Lime link to the object provided, please note that the root node of the object is used and not a specific property.</li>
 </ul>
 <div class="codehilite"><pre><span></span>    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:todo.company.text, limeLink:todo.company, icon:&#39;fa-flag&#39;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
@@ -720,7 +732,7 @@
 
 <h2 id="email-send-an-email">email: Send an email</h2>
 <ul>
-<li><strong>email</strong> - Creates an email. TODO: Should use LIME's built in email factory.</li>
+<li><strong>email</strong> - Creates an email. TODO: Should use Lime's built in email factory.</li>
 </ul>
 <div class="codehilite"><pre><span></span>    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;text:person.email.text, email:person.email.text, icon:&#39;fa-envelope&#39;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>

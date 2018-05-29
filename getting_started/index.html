@@ -324,6 +324,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -353,50 +365,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#up-and-running" title="Up and running" class="md-nav__link">
-    Up and running
+  <a href="#a-lime-bootstrap-actionpad" title="A Lime Bootstrap Actionpad" class="md-nav__link">
+    A Lime Bootstrap Actionpad
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requirements" title="Requirements" class="md-nav__link">
-    Requirements
+  <a href="#the-view" title="The view" class="md-nav__link">
+    The view
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install" title="Install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update" title="Update" class="md-nav__link">
-    Update
+  <a href="#the-viewmodel" title="The ViewModel" class="md-nav__link">
+    The ViewModel
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" title="Basic usage" class="md-nav__link">
-    Basic usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-lime-bootstrap-actionpad" title="A LIME Bootstrap Actionpad" class="md-nav__link">
-    A LIME Bootstrap Actionpad
-  </a>
   
 </li>
       
@@ -469,8 +460,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fetching-data-from-fields-in-lime-pro" title="Fetching data from fields in LIME Pro" class="md-nav__link">
-    Fetching data from fields in LIME Pro
+  <a href="#fetching-data-from-fields-in-lime-crm" title="Fetching data from fields in Lime CRM" class="md-nav__link">
+    Fetching data from fields in Lime CRM
   </a>
   
     <nav class="md-nav">
@@ -562,8 +553,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom_components/" title="Custom components Apps" class="md-nav__link">
-      Custom components Apps
+    <a href="../custom_components/" title="Custom components" class="md-nav__link">
+      Custom components
     </a>
   </li>
 
@@ -654,50 +645,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#up-and-running" title="Up and running" class="md-nav__link">
-    Up and running
+  <a href="#a-lime-bootstrap-actionpad" title="A Lime Bootstrap Actionpad" class="md-nav__link">
+    A Lime Bootstrap Actionpad
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#requirements" title="Requirements" class="md-nav__link">
-    Requirements
+  <a href="#the-view" title="The view" class="md-nav__link">
+    The view
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install" title="Install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update" title="Update" class="md-nav__link">
-    Update
+  <a href="#the-viewmodel" title="The ViewModel" class="md-nav__link">
+    The ViewModel
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-usage" title="Basic usage" class="md-nav__link">
-    Basic usage
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-lime-bootstrap-actionpad" title="A LIME Bootstrap Actionpad" class="md-nav__link">
-    A LIME Bootstrap Actionpad
-  </a>
   
 </li>
       
@@ -770,8 +740,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fetching-data-from-fields-in-lime-pro" title="Fetching data from fields in LIME Pro" class="md-nav__link">
-    Fetching data from fields in LIME Pro
+  <a href="#fetching-data-from-fields-in-lime-crm" title="Fetching data from fields in Lime CRM" class="md-nav__link">
+    Fetching data from fields in Lime CRM
   </a>
   
     <nav class="md-nav">
@@ -830,75 +800,44 @@
                 
                 
                 <h1 id="getting-started">Getting started</h1>
-<h2 id="up-and-running">Up and running</h2>
-<h3 id="requirements">Requirements</h3>
-<p>Lime Bootstrap is only meant to be used inside Lime Crm, but for debugging reasons all functionality should work in any browser.</p>
-<ul>
-<li>Internet Explorer 11</li>
-<li>Chrome 59+</li>
-</ul>
-<p>Older versions of IE <strong>won't</strong> work!</p>
-<ul>
-<li>LIME 10.12 or greater</li>
-</ul>
-<h3 id="install">Install</h3>
-<p>Lime Bootstrap is included in the Lime Core database and nothing is needs to be done in this case. If installing Lime Bootstrap from scratch:</p>
-<ol>
-<li>Copy all the folders, <code>lbs.html</code> and <code>_config.js</code> to the Actionpad-folder</li>
-<li>Add the VBA module <code>lbshelper</code> found in <code>vba</code>-folder.</li>
-<li>Change the URL of all Actionpads in LIME Pro to <code>lbs.html</code></li>
-</ol>
-<p>If you'll like the some basic ActionPad views to start with you can find some <a href="https://github.com/Lundalogik/LimeBootstrapBaseActionpads">here</a></p>
-<h3 id="update">Update</h3>
-<p>Updating LIME Bootstrap is done by downloading the lastest version and replacing some files and updating some VBA.</p>
-<ol>
-<li>Replace the system folder and <code>lbs.html</code></li>
-<li>Replace the VBA module</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please note that Windows sometimes blocks dowloaded javascript files. Make sure to right click and unblock javascript files</p>
-</div>
-<p>======================</p>
-<h2 id="basic-usage">Basic usage</h2>
-<h2 id="a-lime-bootstrap-actionpad">A LIME Bootstrap Actionpad</h2>
-<p>An Actionpad built with LIME Bootstrap has the following structure:</p>
-<div class="codehilite"><pre><span></span><span class="c">&lt;!-- Header section, The colorfull thing at the top  --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header-container [color]&quot;</span><span class="p">&gt;</span> <span class="c">&lt;!-- Specify the color of the header. Please see color section for available colors  --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;header-icon&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>  <span class="c">&lt;!-- Specify the icon of the header. Please see icon section for available special icons  --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;info-links&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-            ...
-        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<h2 id="a-lime-bootstrap-actionpad">A Lime Bootstrap Actionpad</h2>
+<p>An Actionpad built with Lime Bootstrap has the following structure:</p>
+<p><img alt="Alt text" src="../assets/images/actionpad.png" /></p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">lbs-hero</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;header: company.name, img: company&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">lbs-list-item</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;text: company.visitingcity, icon: &#39;fa-map-marker&#39;&quot;</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;openMap: company.fullvisitingaddress&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">lbs-list-item</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;text: company.phone, call: company.phone, icon: &#39;fa-phone&#39;&quot;</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;call: company.phone&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">lbs-list-item</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;text: company.www, openURL: company.www, icon: &#39;fa-globe&#39;&quot;</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;openURL: company.www&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">lbs-hero</span><span class="p">&gt;</span>
 
 
-<span class="c">&lt;!-- /Header section  --&gt;</span>
-<span class="c">&lt;!-- Body section  --&gt;</span>
+<span class="p">&lt;</span><span class="nt">lbs-menu</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;title: &#39;Functions&#39;, expanded: true&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">lbs-list-item</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;text: &#39;Copy postal address&#39;, icon: &#39;fa-calendar&#39;&quot;</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;click: runMyFunction&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">lbs-menu</span><span class="p">&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span> <span class="c">&lt;!-- Menu  --&gt;</span>
-
-
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- /Body section  --&gt;</span>
+<span class="p">&lt;</span><span class="nt">lbs-menu</span> <span class="na">params</span><span class="o">=</span><span class="s">&quot;title: &#39;History&#39;, expanded: true&quot;</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;/</span><span class="nt">lbs-menu</span><span class="p">&gt;</span>
 </pre></div>
 
 
+<p>An ActionPad built with Lime Bootstrap has two main components; a <code>View</code> and a <code>ViewModel</code>. Lime Bootstrap uses <a href="http://knockoutjs.com">knockoutjs</a> <a href="https://en.wikipedia.org/wiki/Model–view–viewmodel">Model-View-ViewModel (MVVM)</a> pattern.</p>
+<h3 id="the-view">The view</h3>
+<p>The view is a piece of HTML which descripes where elements should be placed. In the view we <code>bind</code> the data and functions of the <code>ViewModel</code> to the view. Each ActionPad has an unique view, which is a partial html-file with the same name as the LimeType it is used with, for example `company.html``</p>
+<p>In the <code>view</code>we make heavy use of <code>components</code>, or specialized html elements, for example <code>&lt;lbs-hero&gt;</code>. We are using <a href="http://knockoutjs.com/documentation/component-overview.html">knockout components</a> behind the scenes to create the components, but in essens it is very inspired of the emerging webstandard of web components. Several components are <a href="../included_components">included</a> but you have also the ability to <a href="../custom_components">build your own components</a> or download community components from the <a href="https://appstore.lime-bootstrap.com">AppStore</a></p>
+<h3 id="the-viewmodel">The ViewModel</h3>
 <h2 id="components">Components</h2>
-<p>LIME bootstrap supports all Twitter bootstrap elements but has also a few special elements. Please see the <a href="http://getbootstrap.com/components/">Twitter bootstrap</a> documentation for all cool stuff you have access to.</p>
+<p>Lime bootstrap supports all Twitter bootstrap elements but has also a few special elements. Please see the <a href="http://getbootstrap.com/components/">Twitter bootstrap</a> documentation for all cool stuff you have access to.</p>
 <p>We also supply the following components:</p>
 <ul>
 <li><strong>Menu:</strong> - <em>A menu to hold actions</em></li>
-<li><strong>Dropdown button:</strong> - <em>A dropdown button styled for LIME Pro</em></li>
+<li><strong>Dropdown button:</strong> - <em>A dropdown button styled for Lime Pro</em></li>
 <li><strong>Header section:</strong> - <em>The top section of every actionpad</em></li>
 <li><strong>Data carousel:</strong> - <em>A rotating object to hold more objects</em></li>
 </ul>
 <p>See all our components <a href="../en/latest/components">here</a></p>
 <h2 id="functions-and-apps">Functions and Apps</h2>
 <p>All Twitter bootstrap functions are included, please see the <a href="http://getbootstrap.com/javascript/">Twitter bootstrap documentation</a>
-LIME Bootstraps allows you to load small components we call apps, as a compliment to Twitter Bootstraps components. Apps can be found <a href="http://limebootstrap.lundalogik.com/web/appstore/index.html">here</a></p>
+Lime Bootstraps allows you to load small components we call apps, as a compliment to Twitter Bootstraps components. Apps can be found <a href="http://limebootstrap.lundalogik.com/web/appstore/index.html">here</a></p>
 <p>To start an app add this HTML to your view:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-app</span><span class="o">=</span><span class="s">&quot;{app:&#39;[Name of app]&#39;,</span>
 <span class="s">                config:{</span>
@@ -944,7 +883,7 @@ List of custom handlers:</p>
 <li><strong>call:</strong> - <em>Tries to call the provided phone number</em></li>
 <li><strong>email:</strong> - <em>Tries to email the provided address</em></li>
 <li><strong>icon:</strong> - <em>Prepends the supplied font awesome icon to the html element</em></li>
-<li><strong>limeLink:</strong> - <em>Creates an LIME link from a provided relationship field, for example person.company</em></li>
+<li><strong>limeLink:</strong> - <em>Creates an Lime link from a provided relationship field, for example person.company</em></li>
 <li><strong>openURL:</strong> - <em>Opens the supplied URL in a external browser</em></li>
 <li><strong>showOnMap:</strong> - <em>Opens Google Maps with the supplied data as a search query</em></li>
 <li><strong>vba:</strong> - <em>Provide an string of an VBA function with it's parameters separated by commas</em></li>
@@ -981,7 +920,7 @@ A filter is a function transforming your binding data and outputting a formated 
 </pre></div>
 
 
-<p>The example below uses the versatile knockout binding <code>attr</code> to add a tooltip with localization support. It also uses the custom LIME Bootstrap bindings <code>vba</code> and <code>icon</code>.</p>
+<p>The example below uses the versatile knockout binding <code>attr</code> to add a tooltip with localization support. It also uses the custom Lime Bootstrap bindings <code>vba</code> and <code>icon</code>.</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-bind</span><span class="o">=</span><span class="s">&quot;vba:&#39;Actionpad_Person.newComment&#39;, text:localize.Actionpad_Person.t_newcomment, icon:&#39;fa-comment&#39;, attr: { title: localize.Actionpad_Person.tooltip_newcomment }&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
 
@@ -989,7 +928,7 @@ A filter is a function transforming your binding data and outputting a formated 
 <h3 id="technical-notes">Technical notes</h3>
 <p>The translations are added to the global view model and are thus available in your apps.</p>
 <p>Note that it is not possible to use localization in the standard way, e.g., <code>localize.Actionpad_Person.t_newcomment</code> within a block where you are using the knockout binding <code>with</code>.</p>
-<h2 id="fetching-data-from-fields-in-lime-pro">Fetching data from fields in LIME Pro</h2>
+<h2 id="fetching-data-from-fields-in-lime-crm">Fetching data from fields in Lime CRM</h2>
 <p>All fields from the ActiveInspector are automagically available for you to use in your view. The syntax is <code>[Record class name].[field database name].[property]</code>.</p>
 <p>The available properties are (in order of relevance):
 <em>   <strong>.text</strong>
@@ -1026,7 +965,7 @@ A filter is a function transforming your binding data and outputting a formated 
 <code>moment([CRAZY DATE FORMAT])</code></p>
 <p>Moment even makes time and dates readable to people.
 <code>moment().timeAgo(2011-01-01)</code> will give you, "A few years ago"</p>
-<p>Moment is automagically setup to use the same language and date-format as the language of the LIME Client.
+<p>Moment is automagically setup to use the same language and date-format as the language of the Lime Client.
 Remember to use it and check out it further!</p>
 <h2 id="the-logwatch">The log/watch</h2>
 <p>Bootstap will give you some debug- and log views to help you out.</p>
@@ -1043,18 +982,6 @@ Remember to use it and check out it further!</p>
 <tr>
 <td>Reload actionpad</td>
 <td>ctrl + shift + r</td>
-</tr>
-<tr>
-<td>Open log</td>
-<td>ctrl + shift + l</td>
-</tr>
-<tr>
-<td>Open watch</td>
-<td>ctrl + shift + w</td>
-</tr>
-<tr>
-<td>Close log/watch window</td>
-<td>q</td>
 </tr>
 </tbody>
 </table>
@@ -1078,7 +1005,7 @@ Remember to use it and check out it further!</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../install/" title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1087,7 +1014,7 @@ Remember to use it and check out it further!</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction
+                Installation
               </span>
             </div>
           </a>
