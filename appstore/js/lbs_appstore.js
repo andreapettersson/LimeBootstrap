@@ -1,6 +1,9 @@
 var lbsappstore = {
     init: function () {
-        $.getJSON('http://api.lime-bootstrap.com/apps?page=1', function (data) {
+        // LJE TEST
+        // $.getJSON('http://api.lime-bootstrap.com/apps?page=1', function (data) {
+        $.getJSON('http://127.0.0.1:5000/addons?page=1', function (data) {
+        
             var vm = new viewModel();
             vm.populateFromRawData(data)
             vm.pages = ko.observableArray();
@@ -44,7 +47,8 @@ var viewModel = function () {
             //    self.populateFromRawData(data);
             //});            
                 $.ajax({
-                    url: 'http://api.lime-bootstrap.com/apps?page=' + pagenumber,
+                    //url: 'http://api.lime-bootstrap.com/apps?page=' + pagenumber,
+                    url: 'http://127.0.0.1:5000/apps?page=' + pagenumber,
                     type: 'get',
                     dataType: 'json',
                     cache: true,
@@ -53,7 +57,7 @@ var viewModel = function () {
                         self.populateFromRawData(data)
                     },
                     error: function () {
-                        console.log("något sket sig");
+                        console.log("loadMoreData failed");
                     }
                     
                 });            
@@ -77,8 +81,10 @@ var viewModel = function () {
     // populate VM from JSON data
     self.populateFromRawData = function (rawData) {        
         var currentpage = rawData._self._current_page; 
-        
-        $(rawData.apps).each(function (index, app) {
+                
+        //$(rawData.apps).each(function (index, app) {
+        $(rawData.addons).each(function (index, app) {
+            console.log(app);
             if (app.name) {
                 self.apps.push(new appFactory(app, currentpage))
             }
@@ -119,8 +125,10 @@ var viewModel = function () {
                         return item.currentpage == self.activepage();
                     }
                     else if (self.activeFilter().text === 'New') {
-                        if (Object.prototype.toString.call(item.info.versions()[0]) !== '[object Undefined]') {
-                            return moment(item.info.versions()[0].date()).format('YYYY-MM-DD') > moment().subtract(90, 'days').format('YYYY-MM-DD') && (item.info.status() === 'Release' || item.info.status() === 'Beta');
+                        // if (Object.prototype.toString.call(item.info.versions()[0]) !== '[object Undefined]') {
+                        if (Object.prototype.toString.call(item.info.version_published_at()) !== '[object Undefined]') {
+                            // return moment(item.info.versions()[0].date()).format('YYYY-MM-DD') > moment().subtract(90, 'days').format('YYYY-MM-DD') && (item.info.status() === 'Release' || item.info.status() === 'Beta');
+                            return moment(item.info.version_published_at()).format('YYYY-MM-DD') > moment().subtract(30, 'days').format('YYYY-MM-DD');
                         }
                     }
                     else {
@@ -318,6 +326,9 @@ var appFactory = function (app, currentpage) {
         }
     });
 
+    self.github_link = app.github_link;
+    self.github_issues_link = app.github_issues_link;
+
     self.expandApp = function (app) {
         app.expandedApp(true);
         location.hash = app.name()
@@ -334,7 +345,10 @@ var appFactory = function (app, currentpage) {
     };
     self.download = function () {
         if (self.license()) {
-            location.href = 'http://api.lime-bootstrap.com/apps/' + self.name() + '/download'
+            // LJE TEST
+            // location.href = 'http://api.lime-bootstrap.com/apps/' + self.name() + '/download'
+            location.href = 'http://127.0.0.1:5000/addons/' + self.name() + '/download'
+
         }
         else{
             $(".download-without-password").hide();
@@ -353,8 +367,11 @@ var appFactory = function (app, currentpage) {
     self.downloadApp = function () {
         if (self.password()!="") {
             if(self.password() ==="LLAB"){
-                console.log("downloaing app");
-                location.href = 'http://api.lime-bootstrap.com/apps/' + self.name() + '/download'
+                console.log("downloading app");
+                // LJE TEST
+                // location.href = 'http://api.lime-bootstrap.com/apps/' + self.name() + '/download'
+                location.href = 'http://127.0.0.1:5000/addons/' + self.name() + '/download'
+               
                 self.password('');
                 self.wrongpassword(false);
             }
@@ -386,7 +403,10 @@ var appFactory = function (app, currentpage) {
     });
 
     self.githubAddress = function () {
-        location.href = 'https://github.com/Lundalogik/LimeBootstrapAppStore/tree/master/' + self.name()
+        //location.href = 'https://github.com/Lundalogik/LimeBootstrapAppStore/tree/master/' + self.name()
+        //TEST
+        //location.href = self.github_issues_link;
+        window.open(self.github_issues_link);                
     };
 }
 

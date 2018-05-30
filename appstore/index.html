@@ -9,7 +9,7 @@
     <link href="css/animate.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href="css/monokai_sublime.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/html" id="apps-template">
         <h3 id="filter-text-appstore" data-bind="text: activeFilter().text"></h3>
         <!-- ko foreach: { data: appsGrid, as: 'approw' } -->
@@ -26,7 +26,6 @@
                         <div class="carousel-inner">
                             <div class="item active" data-bind="style:{background:'#F1F6FF url(' + app.smallImage + ') no-repeat center'}" ></div>                                          
                         </div>
-
                     </div>
                     <h3 data-bind="text: app.appName"></h3>
                     <!-- ko if: app.info -->
@@ -55,7 +54,7 @@
                                             <span data-bind="text: 'Install'"></span>
                                         </button>
                                         
-                                        <button type="button" class="btn btn-default pull-right download" data-bind="click:app.githubAddress">
+                                        <button type="button" class="btn btn-default pull-right download" data-bind="click:app.githubAddress ">
                                             <span class="glyphicon glyphicon-cog"></span>
                                             Report problem or look at source
                                         </button>
@@ -95,17 +94,9 @@
                 </div>
                 <!-- /.modal -->
                 <!-- /Expanded app view -->
-
-
-              
-
-
-
-
             </div>
             <!-- /ko -->
             <!-- /ko -->
-
         </div>
         <!-- /ko -->
     </script>
@@ -120,8 +111,7 @@
                     <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span> Lime Bootstrap<img class="crmlogo" src="../assets/img/lime_crm_logotype_icon_empty_RGB.png" /></a>
                 </div>
                 <div class="navbar-collapse collapse">                    
-                    <ul class="nav navbar-nav navbar-right">
-                        
+                    <ul class="nav navbar-nav navbar-right">                        
                         <li data-bind="visible:mergeMenu()" role="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" data-bind="foreach: avaliableStatuses">
@@ -171,16 +161,7 @@
 
                 <div class="row">
                     <!-- <div class="col-md-12" style="background-color:green">   -->
-                    <ul class="nav nav-tabs nav-appstore">
-                        <li role="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" data-bind="foreach: avaliableStatuses">
-                                <!-- ko if: text != 'All' && text != 'New'-->
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text:text, click: $parent.selectStatusFilter"></a></li>
-                                <!-- /ko -->
-                            </ul>
-                        </li>
-
+                    <ul class="nav nav-tabs nav-appstore">                       
                         <li role="presentation" data-bind="foreach: avaliableStatuses">
                             <!-- ko if: text == 'All' -->
                             <a class="active-appstore" id="All" data-bind="click: $parent.selectStatusFilter">Show all</a>
