@@ -777,6 +777,12 @@
 <td>[]</td>
 <td>false</td>
 </tr>
+<tr>
+<td>alias</td>
+<td>Name of node in the ViewModel</td>
+<td>the active Lime Object</td>
+<td>false</td>
+</tr>
 </tbody>
 </table>
 <p>Embed fetches data from related objects. It only works for <code>belongs_to</code> properties.</p>
@@ -795,6 +801,67 @@
 <p><code>TODO: Add example</code></p>
 </div>
 <h3 id="relatedlimeobjects">relatedLimeObjects</h3>
+<p>Fetch data from the Lime CRM api for related objects to the currently active LimeObject</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the data source</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>Name of node in the ViewModel</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>fetchAll</td>
+<td>Fetches all related data instead of only first page</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>Property to sort result on</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>'asc' or 'desc'</td>
+<td>desc</td>
+<td>false</td>
+</tr>
+<tr>
+<td>embed</td>
+<td>Related objects to embed</td>
+<td>[]</td>
+<td>false</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>A filter string</td>
+<td>[]</td>
+<td>false</td>
+</tr>
+<tr>
+<td>size</td>
+<td>number of items in fetch</td>
+<td>0</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
 <h2 id="legacy-data-sources">Legacy data sources</h2>
 <p>The legacy datasources fetches data through the use of VBA or directly through the COM-bridge. These datasources are slower, blocking and less compatible with future directions. Avoyd using them or limit your use as much as possible</p>
 <h3 id="activeinspector">activeInspector</h3>
