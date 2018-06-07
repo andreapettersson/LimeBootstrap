@@ -422,6 +422,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#translations" title="translations" class="md-nav__link">
+    translations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -633,6 +640,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#translations" title="translations" class="md-nav__link">
+    translations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -780,12 +794,23 @@
 <tr>
 <td>alias</td>
 <td>Name of node in the ViewModel</td>
-<td>the active Lime Object</td>
+<td>Name of active Lime Object</td>
 <td>false</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>Protocol of fetch</td>
+<td>https</td>
+<td>false</td>
+</tr>
+<tr>
+<td>Embed fetches data from related objects. It only works for <code>belongs_to</code> properties.</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Embed fetches data from related objects. It only works for <code>belongs_to</code> properties.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The returned data is almost identical to the answer from the Lime CRM API with one important exception, embedded objects. To make embedded data easier to use directly in a View we push the data from the <code>_embeded</code>-node to a <code>[your object here]</code>-node.</p>
@@ -856,12 +881,70 @@
 </tr>
 <tr>
 <td>size</td>
-<td>number of items in fetch</td>
+<td>Number of items in fetch</td>
 <td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>Protocol of fetch</td>
+<td>https</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
+<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;relatedLimeObjects&#39;</span><span class="p">,</span> <span class="nx">limetype</span><span class="o">:</span> <span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;persons&#39;</span><span class="p">,</span> <span class="nx">protocol</span><span class="o">:</span> <span class="s1">&#39;http&#39;</span> <span class="p">}</span>
+</pre></div>
+
+
+<h3 id="translations">translations</h3>
+<p>Fetch translations for the specified language for a specific key (owner)</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the data source</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>Name of node in the ViewModel</td>
+<td>txt</td>
+<td>false</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>A string to specified the wanted locale</td>
+<td>Users locale</td>
+<td>false</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Owner of the translation</td>
+<td>Users locale</td>
+<td>false</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>Protocol of fetch</td>
+<td>https</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;translations&#39;</span><span class="p">,</span> <span class="nx">owner</span><span class="o">:</span> <span class="s1">&#39;company&#39;</span><span class="p">}</span>
+</pre></div>
+
+
 <h2 id="legacy-data-sources">Legacy data sources</h2>
 <p>The legacy datasources fetches data through the use of VBA or directly through the COM-bridge. These datasources are slower, blocking and less compatible with future directions. Avoyd using them or limit your use as much as possible</p>
 <h3 id="activeinspector">activeInspector</h3>
