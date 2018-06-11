@@ -442,6 +442,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#customendpoint" title="customEndpoint" class="md-nav__link">
+    customEndpoint
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -792,6 +799,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#customendpoint" title="customEndpoint" class="md-nav__link">
+    customEndpoint
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -960,16 +974,16 @@
 <p class="admonition-title">Note</p>
 <p>The returned data is almost identical to the answer from the Lime CRM API with one important exception, embedded objects. To make embedded data easier to use directly in a View we push the data from the <code>_embeded</code>-node to a <code>[your object here]</code>-node.</p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>requesting</p>
 <div class="codehilite"><pre><span></span>{ type: &#39;activeLimeObject&#39; , embed: [&#39;coworker&#39;]}
 </pre></div>
 
 
-<p>where the active LimeObject is a company will yield:</p>
-<p><code>TODO: Add example</code></p>
-</div>
+<p>For programtic use</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span><span class="nx">lbs</span><span class="p">.</span><span class="nx">loader</span><span class="p">.</span><span class="nx">createDataSource</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;activeLimeObject&#39;</span> <span class="p">,</span> <span class="nx">embed</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;coworker&#39;</span><span class="p">]})</span>
+<span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">fetch</span><span class="p">()</span>
+</pre></div>
+
+
 <h3 id="relatedlimeobjects">relatedLimeObjects</h3>
 <p>Fetch data from the Lime CRM api for related objects to the currently active LimeObject</p>
 <table>
@@ -1042,6 +1056,12 @@
 </pre></div>
 
 
+<p>For programtic use</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span><span class="nx">lbs</span><span class="p">.</span><span class="nx">loader</span><span class="p">.</span><span class="nx">createDataSource</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;relatedLimeObjects&#39;</span><span class="p">,</span> <span class="nx">limetype</span><span class="o">:</span> <span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;persons&#39;</span><span class="p">,</span> <span class="nx">protocol</span><span class="o">:</span> <span class="s1">&#39;http&#39;</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">fetch</span><span class="p">()</span>
+</pre></div>
+
+
 <h3 id="translations">translations</h3>
 <p>Fetch translations for the specified language for a specific key (owner)</p>
 <table>
@@ -1087,6 +1107,69 @@
 </tbody>
 </table>
 <div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;translations&#39;</span><span class="p">,</span> <span class="nx">owner</span><span class="o">:</span> <span class="s1">&#39;company&#39;</span><span class="p">}</span>
+</pre></div>
+
+
+<p>For programtic use</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span><span class="nx">lbs</span><span class="p">.</span><span class="nx">loader</span><span class="p">.</span><span class="nx">createDataSource</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;translations&#39;</span><span class="p">,</span> <span class="nx">owner</span><span class="o">:</span> <span class="s1">&#39;company&#39;</span><span class="p">})</span>
+<span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">fetch</span><span class="p">()</span>
+</pre></div>
+
+
+<h3 id="customendpoint">customEndpoint</h3>
+<p>Can GET, PUT, POST and DELETE to a Lime CRM Custom Endpoint</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>Type of the data source</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>Name of node in the ViewModel</td>
+<td>''</td>
+<td>true</td>
+</tr>
+<tr>
+<td>relativeUrl</td>
+<td>A url to the custom endpoint, relative the base URL</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>Protocol of fetch</td>
+<td>https</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;customEndpoint&#39;</span><span class="p">,</span> <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;myData&#39;</span><span class="p">,</span> <span class="nx">relativeUrl</span><span class="o">:</span> <span class="s1">&#39;my_endpoint/my_subfunc/&#39;</span><span class="p">}</span>
+</pre></div>
+
+
+<p>For programtic use</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span><span class="nx">lbs</span><span class="p">.</span><span class="nx">loader</span><span class="p">.</span><span class="nx">createDataSource</span><span class="p">({</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;customEndpoint&#39;</span><span class="p">,</span> <span class="nx">alias</span><span class="o">:</span> <span class="s1">&#39;myData&#39;</span><span class="p">,</span> <span class="nx">relativeUrl</span><span class="o">:</span> <span class="s1">&#39;my_endpoint/my_subfunc/&#39;</span><span class="p">})</span>
+
+<span class="c1">// GET and DELETE</span>
+<span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">data2</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="k">delete</span><span class="p">()</span>
+
+<span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span><span class="nx">prop</span><span class="o">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+
+<span class="c1">// PUT and POST</span>
+<span class="kr">const</span> <span class="nx">data3</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">data4</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">dataSource</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span>
 </pre></div>
 
 
