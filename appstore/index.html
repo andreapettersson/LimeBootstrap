@@ -199,8 +199,10 @@
 
     <!-- PAGING -->
     <div class="pagegroup" data-bind="visible: activeFilter().text === 'All'">
+    <!-- ko if: pages().length > 1 -->
     <!-- ko foreach:{ data:pages, as: 'page'} -->
-        <button class="" data-bind="text: page.pagenumber, click: page.nextpage, attr:{'class':($root.activepage() === pagenumber ? 'btn btn-success':'btn btn-default') } "></button>
+        <button class="" data-bind="text: page.pagenumber, click: page.nextpage, visible: page.showButton, attr:{'class':($root.activepage() === pagenumber ? 'btn btn-success':'btn btn-default') } "></button>
+    <!-- /ko -->
     <!-- /ko -->
     </div>
 
@@ -209,7 +211,7 @@
             <div class="col-md-12">
                 <div class="appstore-footer">
                     <ul class="appstore-footer-list">
-                        <li><a href="#">&copy;2015 Lundalogik AB</a></li>
+                        <li><a href="#">&copy;2018 Lundalogik AB</a></li>
                         <li><a href="/">About Lime Bootstrap</a></li>
                         <li><a href="terms/index.html">Terms & Conditions</a></li>
                     </ul>
