@@ -115,7 +115,7 @@
                         <li data-bind="visible:mergeMenu()" role="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Category <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" data-bind="foreach: avaliableStatuses">
-                                <!-- ko if: text != 'All' && text != 'New'-->
+                                <!-- ko if: text != 'All' && text != 'Latest'-->
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-bind="text:text, click: $parent.selectStatusFilter"></a></li>
                                 <!-- /ko -->
                             </ul>
@@ -126,8 +126,8 @@
                             <!-- /ko -->
                         </li>
                         <li data-bind="visible:mergeMenu, foreach: avaliableStatuses">
-                            <!-- ko if: text == 'New' -->
-                            <a id="A2" data-bind="click: $parent.selectStatusFilter">New releases</a>
+                            <!-- ko if: text == 'Latest' -->
+                            <a id="A2" data-bind="click: $parent.selectStatusFilter">Latest releases</a>
                             <!-- /ko -->
                         </li>
                         
@@ -168,8 +168,8 @@
                             <!-- /ko -->
                         </li>
                         <li role="presentation" data-bind="foreach: avaliableStatuses">
-                            <!-- ko if: text == 'New' -->
-                            <a id="New" data-bind="click: $parent.selectStatusFilter">New releases</a>
+                            <!-- ko if: text == 'Latest' -->
+                            <a id="New" data-bind="click: $parent.selectStatusFilter">Latest releases</a>
                             <!-- /ko -->
                         </li>
                         <li role="presentation" id="navbar-appstore-searchbar">

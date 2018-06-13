@@ -85,7 +85,7 @@ var viewModel = function () {
         //$(rawData.apps).each(function (index, app) {
         $(rawData.addons).each(function (index, app) {
             console.log(app);
-            if (app.name) {
+            if (app.name){
                 self.apps.push(new appFactory(app, currentpage))
             }
         });
@@ -124,7 +124,7 @@ var viewModel = function () {
                     if (self.activeFilter().text === 'All') {
                         return item.currentpage == self.activepage();
                     }
-                    else if (self.activeFilter().text === 'New') {
+                    else if (self.activeFilter().text === 'Latest') {
                         // if (Object.prototype.toString.call(item.info.versions()[0]) !== '[object Undefined]') {
                         if (Object.prototype.toString.call(item.info.version_published_at()) !== '[object Undefined]') {
                             // return moment(item.info.versions()[0].date()).format('YYYY-MM-DD') > moment().subtract(90, 'days').format('YYYY-MM-DD') && (item.info.status() === 'Release' || item.info.status() === 'Beta');
@@ -155,12 +155,12 @@ var viewModel = function () {
         // App show be shown from start
 
         var activeApp = ko.utils.arrayFirst(self.apps(), function (item) {
-            return "#" + item.name() == location.hash;
+            return "#" + item.displayName() == location.hash;
         });
 
         if (activeApp) {
             activeApp.expandedApp(true);
-            self.expandedApp(activeApp.name())
+            self.expandedApp(activeApp.displayName())
         }
     }
 
@@ -179,7 +179,7 @@ var viewModel = function () {
             return item.info.status();
         });
         values.push('All');
-        values.push('New');
+        values.push('Latest');
         // make them unique
         values = ko.utils.arrayGetDistinctValues(values).sort();
         // assign new meta data
@@ -191,13 +191,7 @@ var viewModel = function () {
                 case 'Release':
                     style = "btn-success"
                     break;
-                case 'Beta':
-                    style = "btn-warning"
-                    break;
-                case 'Development':
-                    style = "btn-danger"
-                    break;
-            }
+                }
 
             // return an object with properties
             return {
@@ -269,25 +263,25 @@ var appFactory = function (app, currentpage) {
     self.smallImage = "";
     //$.each(self.images, function (index, image) {
 
-        $.each(app.images, function (imageindex, imagedata) {
-            
-            //if (image == imagedata.file_name) {
-            if (imagedata.file_name.indexOf("small") > -1) {
-                self.smallImage = "data:image/" + imagedata.file_type + ";base64," + imagedata.blob.replace("b'", "").replace("'", "");
-            }
-            else {
-                var img = "data:image/" + imagedata.file_type + ";base64," + imagedata.blob.replace("b'", "").replace("'", "");
-                self.smallImage = img
-                self.bigImage = img
-                //}
-                //else {
-                //    self.bigImage = ["../assets/img/_default.png"];
-                //    self.smallImage = ["../assets/img/_default.png"];
-                //}
-            }
-
+    $.each(app.images, function (imageindex, imagedata) {
+        
+        //if (image == imagedata.file_name) {
+        if (imagedata.file_name.indexOf("small") > -1) {
+            self.smallImage = "data:image/" + imagedata.file_type + ";base64," + imagedata.blob.replace("b'", "").replace("'", "");
+        }
+        else {
+            var img = "data:image/" + imagedata.file_type + ";base64," + imagedata.blob.replace("b'", "").replace("'", "");
+            self.smallImage = img
+            self.bigImage = img
             //}
-        });
+            //else {
+            //    self.bigImage = ["../assets/img/_default.png"];
+            //    self.smallImage = ["../assets/img/_default.png"];
+            //}
+        }
+
+        //}
+    });
 
     //})
     if (self.smallImage === "") {
@@ -309,19 +303,13 @@ var appFactory = function (app, currentpage) {
     self.readme = marked(app.readme);
     self.expandedApp = ko.observable(false);
     self.info = ko.mapping.fromJS(app);
-    self.displayName = app.displayName;
+    self.displayName = ko.observable(app.displayName);
     self.license = ko.observable(app.license);
     self.statusColor = ko.computed(function () {
         if (self.info.status) {
             switch (app.status) {
                 case 'Release':
-                    return "label-success"
-                case 'Beta':
-                    return "label-warning"
-                case 'Development':
-                    return "label-danger"
-                case 'N/A':
-                    return "label-danger"
+                    return "label-success"               
             }
         }
     });
@@ -331,7 +319,7 @@ var appFactory = function (app, currentpage) {
 
     self.expandApp = function (app) {
         app.expandedApp(true);
-        location.hash = app.name()
+        location.hash = app.displayName()
         $("#expanded-" + app.name()).modal('show');
     };
 
@@ -347,7 +335,7 @@ var appFactory = function (app, currentpage) {
         if (self.license()) {
             // LJE TEST
             // location.href = 'http://api.lime-bootstrap.com/apps/' + self.name() + '/download'
-            location.href = 'http://127.0.0.1:5000/addons/' + self.name() + '/download'
+            location.href = 'http://127.0.0.1:5000/addons/' + self.displayName() + '/download'
 
         }
         else{
@@ -370,7 +358,7 @@ var appFactory = function (app, currentpage) {
                 console.log("downloading app");
                 // LJE TEST
                 // location.href = 'http://api.lime-bootstrap.com/apps/' + self.name() + '/download'
-                location.href = 'http://127.0.0.1:5000/addons/' + self.name() + '/download'
+                location.href = 'http://127.0.0.1:5000/addons/' + self.displayName() + '/download'
                
                 self.password('');
                 self.wrongpassword(false);
@@ -384,21 +372,21 @@ var appFactory = function (app, currentpage) {
 
     self.installappwithlip = function () {
         if (self.name()) {
-            window.external.run('LBSHelper.RunLip', self.name());
+            window.external.run('LBSHelper.RunLip', self.displayName());
         }
     }
 
 
     self.appName = ko.computed(function () {
-        if (self.displayName){
-            return self.displayName;
+        if (self.displayName()){
+            return self.displayName();
         }
         else if (self.info) {
             //return self.info.name().charAt(0).toUpperCase() + self.info.name().slice(1);
             return self.info.name();
         } else {
             //return self.name().charAt(0).toUpperCase() + self.name().slice(1);
-            return self.name();
+            return self.displayName();
         }
     });
 
