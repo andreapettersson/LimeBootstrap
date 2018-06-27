@@ -40,7 +40,7 @@
     
     
       
-        <title>Card - Lime Bootstrap</title>
+        <title>Guard - Lime Bootstrap</title>
       
     
     
@@ -99,7 +99,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#lbs-card" tabindex="1" class="md-skip">
+      <a href="#lbs-guard" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
                 Lime Bootstrap
               </span>
               <span class="md-header-nav__topic">
-                Card
+                Guard
               </span>
             
           
@@ -469,6 +469,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../lbs-card/" title="Card" class="md-nav__link">
+      Card
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -480,11 +492,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Card
+        Guard
       </label>
     
-    <a href="./" title="Card" class="md-nav__link md-nav__link--active">
-      Card
+    <a href="./" title="Guard" class="md-nav__link md-nav__link--active">
+      Guard
     </a>
     
       
@@ -519,18 +531,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../lbs-guard/" title="Guard" class="md-nav__link">
-      Guard
-    </a>
   </li>
 
         
@@ -721,12 +721,11 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Lundalogik/LimeBootstrap/edit/master/docs/components/lbs-card.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Lundalogik/LimeBootstrap/edit/master/docs/components/lbs-guard.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lbs-card">lbs-card</h1>
-<p>A card like component to use to put other components in</p>
-<p><img alt="The LBS Hero" src="../../assets/images/lbs-card.png" /></p>
+                <h1 id="lbs-guard">lbs-guard</h1>
+<p>Guards its content from being rendered. Used to protect against null values and/or active users group membership</p>
 <h2 id="params">Params</h2>
 <table>
 <thead>
@@ -739,46 +738,36 @@
 </thead>
 <tbody>
 <tr>
-<td>color</td>
-<td>One of LBS standard colors</td>
-<td>'lime-green'</td>
-<td>'turquoise'</td>
+<td>activeUserIsMemberInOneOfGroups</td>
+<td>Checks if active user belongs to group</td>
+<td>['Administrators', 'CIA']</td>
+<td>undefined</td>
 </tr>
 <tr>
-<td>title</td>
-<td>Header text for the card</td>
-<td>'Lime Technologies'</td>
-<td>''</td>
-</tr>
-<tr>
-<td>icon</td>
-<td>Name of the header icon</td>
-<td>'fa-calendar'</td>
-<td></td>
-</tr>
-<tr>
-<td>expandable</td>
-<td>Set if card body can be expanded or not</td>
-<td><code>true</code> or <code>false</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td>expanded</td>
-<td>Default expanded state</td>
-<td><code>true</code> or <code>false</code></td>
-<td><code>true</code></td>
+<td>exists</td>
+<td>Checks if value is null or undefined</td>
+<td>company.undefinedOrNullProp</td>
+<td>undefined</td>
 </tr>
 </tbody>
 </table>
+<p><code>lbs-guard</code> can be used with both or either of the input params.</p>
+<h2 id="usage">Usage</h2>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;lbs-guard</span> <span class="na">params=</span><span class="s">&quot;activeUserIsMemberInOneOfGroups: [&#39;Administrators&#39;]&quot;</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/lbs-menu&gt;</span>
+
+<span class="nt">&lt;lbs-guard</span> <span class="na">params=</span><span class="s">&quot;exists: company.undefinedOrNullProp &quot;</span><span class="nt">&gt;</span>
+    ...
+<span class="nt">&lt;/lbs-menu&gt;</span>
+</pre></div>
+
+
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The component will save the expanded state in a cookie. Thus a user will find the cards in the same way she left them as long as they are on the same machine</p>
+<p>Most properties on LimeObjects that doesn't currently hold any value will default to empty string <code>""</code>.
+<code>exists</code> will only check for <code>null</code> or <code>undefined</code>, passing other "falsey" values will not cause the guard to be applied</p>
 </div>
-<h2 id="usage">Usage</h2>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;lbs-card</span> <span class="na">params=</span><span class="s">&quot;title: &#39;My card&#39;&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div&gt;</span> My data here! <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/lbs-card&gt;</span>
-</pre></div>
                 
                   
                 
@@ -799,7 +788,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../lbs-buttons/" title="Button components" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../lbs-card/" title="Card" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -808,19 +797,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Button components
+                Card
               </span>
             </div>
           </a>
         
         
-          <a href="../lbs-guard/" title="Guard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../lbs-hero/" title="Hero" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Guard
+                Hero
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

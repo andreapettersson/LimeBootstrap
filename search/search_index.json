@@ -746,6 +746,26 @@
             "title": "Usage"
         },
         {
+            "location": "/components/lbs-guard/",
+            "text": "lbs-guard\n\n\nGuards its content from being rendered. Used to protect against null values and/or active users group membership\n\n\nParams\n\n\n\n\n\n\n\n\nParam\n\n\nExplanation\n\n\nExample value\n\n\nDefault value\n\n\n\n\n\n\n\n\n\n\nactiveUserIsMemberInOneOfGroups\n\n\nChecks if active user belongs to group\n\n\n['Administrators', 'CIA']\n\n\nundefined\n\n\n\n\n\n\nexists\n\n\nChecks if value is null or undefined\n\n\ncompany.undefinedOrNullProp\n\n\nundefined\n\n\n\n\n\n\n\n\nlbs-guard\n can be used with both or either of the input params.\n\n\nUsage\n\n\n<lbs-guard\n \nparams=\n\"activeUserIsMemberInOneOfGroups: ['Administrators']\"\n>\n\n    ...\n\n</lbs-menu>\n\n\n\n<lbs-guard\n \nparams=\n\"exists: company.undefinedOrNullProp \"\n>\n\n    ...\n\n</lbs-menu>\n\n\n\n\n\n\n\n\nInfo\n\n\nMost properties on LimeObjects that doesn't currently hold any value will default to empty string \n\"\"\n.\n\nexists\n will only check for \nnull\n or \nundefined\n, passing other \"falsey\" values will not cause the guard to be applied",
+            "title": "Guard"
+        },
+        {
+            "location": "/components/lbs-guard/#lbs-guard",
+            "text": "Guards its content from being rendered. Used to protect against null values and/or active users group membership",
+            "title": "lbs-guard"
+        },
+        {
+            "location": "/components/lbs-guard/#params",
+            "text": "Param  Explanation  Example value  Default value      activeUserIsMemberInOneOfGroups  Checks if active user belongs to group  ['Administrators', 'CIA']  undefined    exists  Checks if value is null or undefined  company.undefinedOrNullProp  undefined     lbs-guard  can be used with both or either of the input params.",
+            "title": "Params"
+        },
+        {
+            "location": "/components/lbs-guard/#usage",
+            "text": "<lbs-guard   params= \"activeUserIsMemberInOneOfGroups: ['Administrators']\" > \n    ... </lbs-menu>  <lbs-guard   params= \"exists: company.undefinedOrNullProp \" > \n    ... </lbs-menu>    Info  Most properties on LimeObjects that doesn't currently hold any value will default to empty string  \"\" . exists  will only check for  null  or  undefined , passing other \"falsey\" values will not cause the guard to be applied",
+            "title": "Usage"
+        },
+        {
             "location": "/components/lbs-hero/",
             "text": "lbs-hero\n\n\nComponent for adding a hero (banner like header) for an actionpad.\n\n\n\n\nParams\n\n\n\n\n\n\n\n\nParam\n\n\nExplanation\n\n\nExample value\n\n\nDefault value\n\n\n\n\n\n\n\n\n\n\ncolor\n\n\nOne of LBS standard colors\n\n\n'lime-green'\n\n\n'turquoise'\n\n\n\n\n\n\nheader\n\n\nHeader text for the hero\n\n\n'Lime Technologies'\n\n\n''\n\n\n\n\n\n\nimg\n\n\nName of the header image\n\n\n'fa-calendar'\n\n\n\n\n\n\n\n\nmenuItems\n\n\nArray with objects defining a context menu.\n\n\nSee below\n\n\n[]\n\n\n\n\n\n\n\n\n\n\nContext menu\n\n\nThe context menu is automatically added to the lbs-hero component if the array \nmenuItems\n is supplied and has more than 0 elements. Each element in the array has the following options:\n\n\n\n\n\n\n\n\nParam\n\n\nExplanation\n\n\nExample value\n\n\nDefault value\n\n\n\n\n\n\n\n\n\n\nlabel\n\n\nText shown in the list item\n\n\n'Postpone'\n\n\n''\n\n\n\n\n\n\nicon\n\n\nOptional icon to the left of the text\n\n\n'fa-user'\n\n\n''\n\n\n\n\n\n\nclick\n\n\nJavascript function to run on click\n\n\n() => { alert('Hi') }\n\n\nnull\n\n\n\n\n\n\nvba\n\n\nVBA sub to run on click. Can be combined with click.\n\n\n'Module.Sub'\n\n\nnull\n\n\n\n\n\n\ntype\n\n\nitem\n or \ndivider\n\n\n'item'\n\n\n'item'\n\n\n\n\n\n\n\n\n\n\nInfo\n\n\nAll other parameters will be disregarded if type is set to \ndivider\n.\n\n\n\n\n\n\nWarning\n\n\nYou need to supply the image to the dist/resource/ folder if the name of the image is anything else than \ndist/resource/classname.png\n.\n\n\n\n\nUsage\n\n\n<lbs-hero\n \nparams=\n\"header: company.name, menuItems: [{ label: 'My hero item', icon: 'fa-bowling-ball' }]\"\n>\n\n    \n<lbs-list-item\n \nparams=\n\"text: company.visitingcity, icon: 'fa-map-marker'\"\n \ndata-bind=\n\"openMap: company.fullvisitingaddress\"\n></lbs-list-item>\n\n    \n<lbs-list-item\n \nparams=\n\"text: company.phone, call: company.phone, icon: 'fa-phone'\"\n \ndata-bind=\n\"call: company.phone\"\n></lbs-list-item>\n\n    \n<lbs-list-item\n \nparams=\n\"text: company.www, openURL: company.www, icon: 'fa-globe'\"\n \ndata-bind=\n\"openURL: company.www\"\n></lbs-list-item>\n\n\n</lbs-hero>",
             "title": "Hero"
@@ -868,6 +888,31 @@
         {
             "location": "/components/lbs-menu/#usage",
             "text": "<lbs-menu   params= \"title: 'Links', expanded: true\" > \n     <lbs-list-item   params= \"text: 'Do funny stuff', icon: 'fa-calendar'\"   data-bind= \"click: runMyFunction\" ></li>  </lbs-menu>    Info  The component will save the expanded state in a cookie. Thus a user will find the menues in the same way she left them as long as they are on the same machine",
+            "title": "Usage"
+        },
+        {
+            "location": "/components/lbs-search/",
+            "text": "lbs-search\n\n\nA input element for searching\n\n\nParams\n\n\n\n\n\n\n\n\nParam\n\n\nExplanation\n\n\nExample value\n\n\nDefault value\n\n\n\n\n\n\n\n\n\n\ntitle\n\n\nTitle text for the menu\n\n\n'Links'\n\n\n''\n\n\n\n\n\n\nfilter\n\n\nTitle text for the menu\n\n\n'Links'\n\n\n''\n\n\n\n\n\n\nclear\n\n\nTitle text for the menu\n\n\n'Links'\n\n\n''\n\n\n\n\n\n\nicon\n\n\nTitle text for the menu\n\n\n'Links'\n\n\n''\n\n\n\n\n\n\nplaceholder\n\n\nBoolean\n\n\nfalse\n\n\ntrue\n\n\n\n\n\n\n\n\nChild elements\n\n\nThe component \nlbs-search\n should be used with one type of child element:\n* LBS List item (\n<lbs-list-item>\n)\n\n\nUsage\n\n\n<lbs-menu\n \nparams=\n\"title: 'Links', expanded: true\"\n>\n\n    \n<lbs-list-item\n \nparams=\n\"text: 'Do funny stuff', icon: 'fa-calendar'\"\n \ndata-bind=\n\"click: runMyFunction\"\n></li>\n\n\n</lbs-menu>",
+            "title": "Search"
+        },
+        {
+            "location": "/components/lbs-search/#lbs-search",
+            "text": "A input element for searching",
+            "title": "lbs-search"
+        },
+        {
+            "location": "/components/lbs-search/#params",
+            "text": "Param  Explanation  Example value  Default value      title  Title text for the menu  'Links'  ''    filter  Title text for the menu  'Links'  ''    clear  Title text for the menu  'Links'  ''    icon  Title text for the menu  'Links'  ''    placeholder  Boolean  false  true",
+            "title": "Params"
+        },
+        {
+            "location": "/components/lbs-search/#child-elements",
+            "text": "The component  lbs-search  should be used with one type of child element:\n* LBS List item ( <lbs-list-item> )",
+            "title": "Child elements"
+        },
+        {
+            "location": "/components/lbs-search/#usage",
+            "text": "<lbs-menu   params= \"title: 'Links', expanded: true\" > \n     <lbs-list-item   params= \"text: 'Do funny stuff', icon: 'fa-calendar'\"   data-bind= \"click: runMyFunction\" ></li>  </lbs-menu>",
             "title": "Usage"
         },
         {
