@@ -104,6 +104,9 @@ const lbs = {
             localComponents = lbs.externalConfig[lbs.activeClass].components
         }
         await ComponentLoader.loadComponents(lbs.externalConfig.components, localComponents)
+
+        await ComponentLoader.loadWebComponents(lbs.externalConfig.webComponents)
+
         // load apps
         this.apploader.identifyApps()
 

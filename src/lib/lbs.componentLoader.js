@@ -18,4 +18,18 @@ export default class ComponentLoader {
             }
         }))
     }
+
+    static async loadWebComponents(webComponents) {
+        const components = webComponents
+        await Promise.all(components.map(async (component) => {
+            try {
+                await $.getScript(component.path).done(() => {
+                    lbs.log.info(`Registering component ${component.name}`)
+                })
+            } catch (err) {
+                lbs.log.error(`Failed to load component '${component.name}'`, err)
+            }
+        }))
+    }
 }
+
