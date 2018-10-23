@@ -29,6 +29,6 @@ Updating Lime Bootstrap is done by downloading the lastest version and replacing
 2.	Replace the VBA module
 
 !!! info
-    If you are upgrading from LBS 1.3 or older you also need to replace and upgrade `_config.js`
+    If you are upgrading from LBS 1.3 or older you also need to replace and upgrade `_config.js`. Make sure we transfer customer specific     config to the new '_config.js'
 
 
